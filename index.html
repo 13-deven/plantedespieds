@@ -1,1 +1,1064 @@
-index.html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planté des Pieds — Artbooks & Univers Fétiches</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Satoshi', sans-serif;
+            background: #0a0a0f;
+            color: #e8e0d4;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Clash Display', sans-serif;
+        }
+        .grain-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+        .hero-gradient {
+            background: linear-gradient(180deg, transparent 0%, rgba(10,10,15,0.4) 40%, rgba(10,10,15,0.95) 100%);
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #c9a84c, #f0d68a, #c9a84c, #a07830);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .gold-border {
+            background: linear-gradient(135deg, #c9a84c, #f0d68a, #c9a84c);
+            padding: 2px;
+        }
+        .gold-border-inner {
+            background: #0a0a0f;
+        }
+        .purple-glow {
+            box-shadow: 0 0 60px rgba(120, 60, 180, 0.15), 0 0 120px rgba(120, 60, 180, 0.05);
+        }
+        .card-hover {
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(120, 60, 180, 0.2), 0 0 100px rgba(200, 168, 76, 0.1);
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+        }
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 50%, rgba(10,10,15,0.9) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+        .gallery-item .overlay-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: 2;
+        }
+        .gallery-item:hover .overlay-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: linear-gradient(90deg, #c9a84c, #f0d68a);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #c9a84c, #a07830);
+            color: #0a0a0f;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(201,168,76,0.3);
+        }
+        .btn-outline {
+            border: 1px solid rgba(201,168,76,0.4);
+            color: #c9a84c;
+            transition: all 0.3s ease;
+        }
+        .btn-outline:hover {
+            background: rgba(201,168,76,0.1);
+            border-color: #c9a84c;
+            transform: translateY(-2px);
+        }
+        .marquee-track {
+            display: flex;
+            animation: marquee 30s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .pulse-glow {
+            animation: pulseGlow 3s ease-in-out infinite;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(201,168,76,0.1); }
+            50% { box-shadow: 0 0 40px rgba(201,168,76,0.2), 0 0 80px rgba(120,60,180,0.1); }
+        }
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(5,5,10,0.95);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+            backdrop-filter: blur(20px);
+        }
+        .lightbox.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .lightbox img {
+            max-width: 85vw;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #c9a84c;
+            font-size: 2rem;
+            transition: transform 0.3s ease;
+        }
+        .lightbox-close:hover {
+            transform: rotate(90deg);
+        }
+        .filter-btn {
+            transition: all 0.3s ease;
+        }
+        .filter-btn.active {
+            background: linear-gradient(135deg, #c9a84c, #a07830);
+            color: #0a0a0f;
+        }
+        .filter-btn:not(.active):hover {
+            background: rgba(201,168,76,0.1);
+        }
+        .scroll-indicator {
+            animation: scrollBounce 2s ease-in-out infinite;
+        }
+        @keyframes scrollBounce {
+            0%, 100% { transform: translateY(0); opacity: 1; }
+            50% { transform: translateY(10px); opacity: 0.5; }
+        }
+        .text-shadow-gold {
+            text-shadow: 0 0 40px rgba(201,168,76,0.3);
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0f;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #c9a84c, #604020);
+            border-radius: 3px;
+        }
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="grain-overlay"></div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-close" onclick="closeLightbox()">✕</div>
+        <img id="lightbox-img" src="" alt="Agrandissement">
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full gold-border flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <div class="w-8 h-8 rounded-full bg-[#0a0a0f] flex items-center justify-center">
+                        <span class="text-[#c9a84c] text-sm font-bold">PdP</span>
+                    </div>
+                </div>
+                <span class="font-heading font-semibold text-lg tracking-wide hidden sm:block">
+                    <span class="gold-gradient">Planté des Pieds</span>
+                </span>
+            </a>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#accueil" class="nav-link text-sm tracking-wider uppercase text-[#e8e0d4]/70 hover:text-[#c9a84c] transition-colors">Accueil</a>
+                <a href="#galerie" class="nav-link text-sm tracking-wider uppercase text-[#e8e0d4]/70 hover:text-[#c9a84c] transition-colors">Galerie</a>
+                <a href="#artbooks" class="nav-link text-sm tracking-wider uppercase text-[#e8e0d4]/70 hover:text-[#c9a84c] transition-colors">Artbooks</a>
+                <a href="#univers" class="nav-link text-sm tracking-wider uppercase text-[#e8e0d4]/70 hover:text-[#c9a84c] transition-colors">Univers DP</a>
+                <a href="#contact" class="btn-primary px-6 py-2.5 rounded-full text-sm tracking-wider uppercase">Contact</a>
+            </div>
+            <button id="menu-toggle" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 cursor-pointer" onclick="toggleMenu()">
+                <span class="menu-line w-6 h-0.5 bg-[#c9a84c] transition-all duration-300"></span>
+                <span class="menu-line w-6 h-0.5 bg-[#c9a84c] transition-all duration-300"></span>
+                <span class="menu-line w-4 h-0.5 bg-[#c9a84c] transition-all duration-300"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu fixed top-0 right-0 w-80 h-full bg-[#0f0f18] z-50 p-8 flex flex-col gap-6" id="mobile-menu">
+        <button class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center text-[#c9a84c] text-xl" onclick="toggleMenu()">✕</button>
+        <div class="mt-16 flex flex-col gap-6">
+            <a href="#accueil" class="text-lg font-heading tracking-wider text-[#e8e0d4]/80 hover:text-[#c9a84c] transition-colors" onclick="toggleMenu()">Accueil</a>
+            <a href="#galerie" class="text-lg font-heading tracking-wider text-[#e8e0d4]/80 hover:text-[#c9a84c] transition-colors" onclick="toggleMenu()">Galerie</a>
+            <a href="#artbooks" class="text-lg font-heading tracking-wider text-[#e8e0d4]/80 hover:text-[#c9a84c] transition-colors" onclick="toggleMenu()">Artbooks</a>
+            <a href="#univers" class="text-lg font-heading tracking-wider text-[#e8e0d4]/80 hover:text-[#c9a84c] transition-colors" onclick="toggleMenu()">Univers DP</a>
+            <a href="#contact" class="btn-primary px-6 py-3 rounded-full text-center mt-4" onclick="toggleMenu()">Contact</a>
+        </div>
+    </div>
+    <div class="mobile-overlay fixed inset-0 bg-black/60 z-40 hidden" id="mobile-overlay" onclick="toggleMenu()"></div>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://image.qwenlm.ai/public_source/87ab1134-fe7d-47c8-b326-6d3527acabfe/1510acad4-4a09-4f64-a489-dd3e1f163b50.png" alt="Hero" class="w-full h-full object-cover">
+            <div class="hero-gradient absolute inset-0"></div>
+        </div>
+        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+            <div class="mb-6 opacity-0 translate-y-8" id="hero-badge">
+                <span class="inline-block px-5 py-2 rounded-full border border-[#c9a84c]/30 text-[#c9a84c] text-xs tracking-[0.3em] uppercase">
+                    Art Fétiche & Univers DP
+                </span>
+            </div>
+            <h1 class="font-heading text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-6 opacity-0 translate-y-8" id="hero-title">
+                <span class="block">Planté</span>
+                <span class="block gold-gradient text-shadow-gold">des Pieds</span>
+            </h1>
+            <p class="text-lg sm:text-xl md:text-2xl text-[#e8e0d4]/60 max-w-2xl mx-auto mb-10 leading-relaxed opacity-0 translate-y-8" id="hero-subtitle">
+                Une exploration artistique du fétichisme des pieds à travers artbooks, illustrations et créations visuelles uniques.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 translate-y-8" id="hero-buttons">
+                <a href="#galerie" class="btn-primary px-10 py-4 rounded-full text-base tracking-wider uppercase">
+                    Explorer la Galerie
+                </a>
+                <a href="#artbooks" class="btn-outline px-10 py-4 rounded-full text-base tracking-wider uppercase">
+                    Voir les Artbooks
+                </a>
+            </div>
+        </div>
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 scroll-indicator">
+            <svg width="24" height="40" viewBox="0 0 24 40" fill="none">
+                <rect x="1" y="1" width="22" height="38" rx="11" stroke="#c9a84c" stroke-opacity="0.4" stroke-width="2"/>
+                <circle cx="12" cy="10" r="3" fill="#c9a84c" opacity="0.6">
+                    <animate attributeName="cy" values="10;22;10" dur="2s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="2s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="py-6 border-y border-[#c9a84c]/10 bg-[#0a0a0f]/80 backdrop-blur-sm overflow-hidden">
+        <div class="marquee-track whitespace-nowrap">
+            <span class="inline-flex items-center gap-8 px-4 text-[#e8e0d4]/30 text-sm tracking-[0.4em] uppercase font-heading">
+                <span>✦ Art Fétiche</span><span>✦ Planté des Pieds</span><span>✦ Univers DP</span><span> Artbooks Exclusifs</span><span>✦ Créations Originales</span><span>✦ Galerie Sensuelle</span><span>✦ Art Fétiche</span><span>✦ Planté des Pieds</span><span>✦ Univers DP</span><span> Artbooks Exclusifs</span><span> Créations Originales</span><span>✦ Galerie Sensuelle</span>
+            </span>
+            <span class="inline-flex items-center gap-8 px-4 text-[#e8e0d4]/30 text-sm tracking-[0.4em] uppercase font-heading">
+                <span> Art Fétiche</span><span>✦ Planté des Pieds</span><span>✦ Univers DP</span><span>✦ Artbooks Exclusifs</span><span>✦ Créations Originales</span><span>✦ Galerie Sensuelle</span><span>✦ Art Fétiche</span><span>✦ Planté des Pieds</span><span>✦ Univers DP</span><span>✦ Artbooks Exclusifs</span><span>✦ Créations Originales</span><span> Galerie Sensuelle</span>
+            </span>
+        </div>
+    </div>
+
+    <!-- About / Introduction -->
+    <section class="py-24 md:py-32 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div class="reveal-left">
+                <span class="text-[#c9a84c] text-xs tracking-[0.3em] uppercase mb-4 block">À propos</span>
+                <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                    L'art de<br><span class="gold-gradient">l'adoration</span><br>des pieds
+                </h2>
+                <p class="text-[#e8e0d4]/60 text-lg leading-relaxed mb-6">
+                    Bienvenue dans l'univers de <strong class="text-[#c9a84c]">Planté des Pieds</strong>. Un espace dédié à la célébration artistique du fétichisme podal à travers des créations visuelles, des artbooks exclusifs et des illustrations qui explorent ce thème avec élégance et sensualité.
+                </p>
+                <p class="text-[#e8e0d4]/50 leading-relaxed mb-8">
+                    Mon travail se situe à l'intersection de l'art érotique et de l'illustration narrative, créant un univers riche où chaque pied raconté, chaque pose capturée devient une œuvre à part entière. De mes artbooks fétiches favoris à mes propres créations dans l'univers DP, découvrez une collection pensée avec passion.
+                </p>
+                <div class="flex gap-8">
+                    <div>
+                        <span class="text-3xl font-heading font-bold gold-gradient">50+</span>
+                        <p class="text-[#e8e0d4]/40 text-sm mt-1">Œuvres créées</p>
+                    </div>
+                    <div>
+                        <span class="text-3xl font-heading font-bold gold-gradient">12</span>
+                        <p class="text-[#e8e0d4]/40 text-sm mt-1">Artbooks en collection</p>
+                    </div>
+                    <div>
+                        <span class="text-3xl font-heading font-bold gold-gradient">DP</span>
+                        <p class="text-[#e8e0d4]/40 text-sm mt-1">Univers exclusif</p>
+                    </div>
+                </div>
+            </div>
+            <div class="reveal-right relative">
+                <div class="gold-border rounded-2xl p-[2px] pulse-glow">
+                    <div class="rounded-2xl overflow-hidden">
+                        <img src="https://image.qwenlm.ai/public_source/87ab1134-fe7d-47c8-b326-6d3527acabfe/1c2b3ac6d-ca8c-4f93-99a7-739d2ba2fce8.png" alt="Art feet" class="w-full h-[500px] object-cover">
+                    </div>
+                </div>
+                <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-[#c9a84c]/20 to-transparent rounded-full blur-3xl"></div>
+                <div class="absolute -top-6 -right-6 w-40 h-40 bg-gradient-to-br from-purple-800/20 to-transparent rounded-full blur-3xl"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- Gallery Section -->
+    <section id="galerie" class="py-24 md:py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal-up">
+                <span class="text-[#c9a84c] text-xs tracking-[0.3em] uppercase mb-4 block">Portfolio</span>
+                <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                    Ma <span class="gold-gradient">Galerie</span>
+                </h2>
+                <p class="text-[#e8e0d4]/50 max-w-2xl mx-auto text-lg">
+                    Explorez mes créations artistiques dédiées au fétichisme des pieds, chaque œuvre est une invitation à la contemplation sensuelle.
+                </p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12 reveal-up">
+                <button class="filter-btn active px-6 py-2.5 rounded-full text-sm tracking-wider" onclick="filterGallery('all', this)">Tout</button>
+                <button class="filter-btn px-6 py-2.5 rounded-full text-sm tracking-wider text-[#e8e0d4]/60" onclick="filterGallery('illustration', this)">Illustrations</button>
+                <button class="filter-btn px-6 py-2.5 rounded-full text-sm tracking-wider text-[#e8e0d4]/60" onclick="filterGallery('photo', this)">Photographies</button>
+                <button class="filter-btn px-6 py-2.5 rounded-full text-sm tracking-wider text-[#e8e0d4]/60" onclick="filterGallery('dp', this)">Univers DP</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+                <div class="gallery-item rounded-xl card-hover cursor-pointer reveal-up" data-category="illustration" onclick="openLightbox(this)">
+                    <img src="https://image.qwenlm.ai/public_source/87ab1134-fe7d-47c8-b326-6d3527acabfe/1510acad4-4a09-4f64-a489-dd3e1f163b50.png" alt="Illustration pieds" class="w-full h-72 object-cover rounded-xl">
+                    <div class="overlay-content">
+                        <span class="text-[#c9a84c] text-xs tracking-wider uppercase">Illustration</span>
+                        <h3 class="font-heading text-lg font-semibold mt-1">Élévation Dorée</h3>
+                    </div>
+                </div>
+                <div class="gallery-item rounded-xl card-hover cursor-pointer reveal-up" data-category="photo" onclick="openLightbox(this)">
+                    <img src="https://image.qwenlm.ai/public_source/87ab1134-fe7d-47c8-b326-6d3527acabfe/1a7a79904-fcae-4284-9087-10a100c6651b.png" alt="Photo artistique" class="w-full h-72 object-cover rounded-xl">
+                    <div class="overlay-content">
+                        <span class="text-[#c9a84c] text-xs tracking-wider uppercase">Photographie</span>
+                        <h3 class="font-heading text-lg font-semibold mt-1">Velours & Lumière</h3>
+                    </div>
+                </div>
+                <div class="gallery-item rounded-xl card-hover cursor-pointer reveal-up" data-category="dp" onclick="openLightbox(this)">
+                    <img src="https://image.qwenlm.ai/public_source/87ab1134-fe7d-47c8-b326-6d3527acabfe/1a03dffad-8171-4a53-9049-2340cb1a1532.png" alt="Univers DP" class="w-full h-72 object-cover rounded-xl">
+                    <div class="overlay-content">
+                        <span class="text-[#c9a84c] text-xs tracking-wider uppercase">Univers DP</span>
+                        <h3 class="font-heading text-lg font-semibold mt-1">Marche Céleste</h3>
+                    </div>
+                </div>
+                <div class="gallery-item rounded-xl card-hover cursor-pointer reveal-up" data-category="illustration" onclick="openLightbox(this)">
+                    <img src="https://image.qwenlm.ai/public_source/87ab1134-fe7d-47c8-b326-6d3527acabfe/1c2b3ac6d-ca8c-4f93-99a7-739d2ba2fce8.png" alt="Art cadre" class="w-full h-72 object-cover rounded-xl">
+                    <div class="overlay-content">
+                        <span class="text-[#c9a84c] text-xs tracking-wider uppercase">Illustration</span>
+                        <h3 class="font-heading text-lg font-semibold mt-1">Cadre d'Or</h3>
+                    </div>
+                </div>
+                <div class="gallery-item rounded-xl card-hover cursor-pointer reveal-up" data-category="photo" onclick="openLightbox(this)">
+                    <img src="https://image.qwenlm.ai/public_source/87ab1134-fe7d-47c8-b326-6d3527acabfe/1a7a79904-fcae-4284-9087-10a100c6651b.png" alt="Galerie" class="w-full h-72 object-cover rounded-xl">
+                    <div class="overlay-content">
+                        <span class="text-[#c9a84c] text-xs tracking-wider uppercase">Photographie</span>
+                        <h3 class="font-heading text-lg font-semibold mt-1">Ombre & Soie</h3>
+                    </div>
+                </div>
+                <div class="gallery-item rounded-xl card-hover cursor-pointer reveal-up" data-category="dp" onclick="openLightbox(this)">
+                    <img src="https://image.qwenlm.ai/public_source/87ab1134-fe7d-47c8-b326-6d3527acabfe/1a03dffad-8171-4a53-9049-2340cb1a1532.png" alt="DP Fantasy" class="w-full h-72 object-cover rounded-xl">
+                    <div class="overlay-content">
+                        <span class="text-[#c9a84c] text-xs tracking-wider uppercase">Univers DP</span>
+                        <h3 class="font-heading text-lg font-semibold mt-1">Rune & Éclat</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- Artbooks Section -->
+    <section id="artbooks" class="py-24 md:py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal-up">
+                <span class="text-[#c9a84c] text-xs tracking-[0.3em] uppercase mb-4 block">Collection</span>
+                <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                    Mes <span class="gold-gradient">Artbooks</span> Fétiches
+                </h2>
+                <p class="text-[#e8e0d4]/50 max-w-2xl mx-auto text-lg">
+                    Une sélection curated d'artbooks qui m'inspirent et façonnent mon univers créatif autour du fétichisme des pieds.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Artbook 1 -->
+                <div class="group reveal-up">
+                    <div class="gold-border rounded-xl p-[2px] card-hover">
+                        <div class="rounded-xl overflow-hidden bg-[#0f0f18]">
+                            <div class="relative overflow-hidden">
+                                <img src="https://image.qwenlm.ai/public_source/87ab1134-fe7d-47c8-b326-6d3527acabfe/1e6c58ec5-4ebc-4176-bbd5-4a9357a7e75d.png" alt="Artbook" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-700">
+                                <div class="absolute top-4 right-4 bg-[#c9a84c] text-[#0a0a0f] text-xs font-bold px-3 py-1 rounded-full">FAVORI</div>
+                            </div>
+                            <div class="p-6">
+                                <span class="text-[#c9a84c] text-xs tracking-wider uppercase">Artbook • 2024</span>
+                                <h3 class="font-heading text-xl font-semibold mt-2 mb-3">Luxe Figures</h3>
+                                <p class="text-[#e8e0d4]/50 text-sm leading-relaxed mb-4">
+                                    Collection exclusive de photographies artistiques mettant en valeur la beauté sculpturale des pieds. Édition limitée numérotée.
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-[#e8e0d4]/40 text-xs">128 pages</span>
+                                    <button class="btn-outline px-5 py-2 rounded-full text-xs tracking-wider uppercase">Détails</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artbook 2 -->
+                <div class="group reveal-up">
+                    <div class="gold-border rounded-xl p-[2px] card-hover">
+                        <div class="rounded-xl overflow-hidden bg-[#0f0f18]">
+                            <div class="relative overflow-hidden">
+                                <img src="https://image.qwenlm.ai/public_source/87ab1134-fe7d-47c8-b326-6d3527acabfe/1c2b3ac6d-ca8c-4f93-99a7-739d2ba2fce8.png" alt="Artbook" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-700">
+                            </div>
+                            <div class="p-6">
+                                <span class="text-[#c9a84c] text-xs tracking-wider uppercase">Artbook • 2023</span>
+                                <h3 class="font-heading text-xl font-semibold mt-2 mb-3">Velours Pourpre</h3>
+                                <p class="text-[#e8e0d4]/50 text-sm leading-relaxed mb-4">
+                                    Un voyage à travers les textures et les couleurs du fétichisme podal. Illustrations originales et photographies soigneusement sélectionnées.
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-[#e8e0d4]/40 text-xs">96 pages</span>
+                                    <button class="btn-outline px-5 py-2 rounded-full text-xs tracking-wider uppercase">Détails</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artbook 3 -->
+                <div class="group reveal-up">
+                    <div class="gold-border rounded-xl p-[2px] card-hover">
+                        <div class="rounded-xl overflow-hidden bg-[#0f0f18]">
+                            <div class="relative overflow-hidden">
+                                <img src="https://image.qwenlm.ai/public_source/87ab1134-fe7d-47c8-b326-6d3527acabfe/1a03dffad-8171-4a53-9049-2340cb1a1532.png" alt="Artbook" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-700">
+                                <div class="absolute top-4 right-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full">UNIVERS DP</div>
+                            </div>
+                            <div class="p-6">
+                                <span class="text-[#c9a84c] text-xs tracking-wider uppercase">Univers DP • 2024</span>
+                                <h3 class="font-heading text-xl font-semibold mt-2 mb-3">Marche Mystique</h3>
+                                <p class="text-[#e8e0d4]/50 text-sm leading-relaxed mb-4">
+                                    L'univers DP prend forme dans ce recueil fantastique. Des pieds célestes foulant des mondes imaginaires, entre mythologie et sensualité.
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-[#e8e0d4]/40 text-xs">160 pages</span>
+                                    <button class="btn-outline px-5 py-2 rounded-full text-xs tracking-wider uppercase">Détails</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- More artbooks list -->
+            <div class="mt-16 reveal-up">
+                <h3 class="font-heading text-2xl font-semibold mb-8 text-center">
+                    Toute ma <span class="gold-gradient">collection</span>
+                </h3>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="bg-[#0f0f18] border border-[#c9a84c]/10 rounded-xl p-5 card-hover cursor-pointer group">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-16 bg-gradient-to-br from-purple-800 to-purple-900 rounded flex-shrink-0 flex items-center justify-center">
+                                <span class="text-[#c9a84c] text-xs font-bold">01</span>
+                            </div>
+                            <div>
+                                <h4 class="font-heading text-sm font-semibold group-hover:text-[#c9a84c] transition-colors">Soleil Podal</h4>
+                                <span class="text-[#e8e0d4]/40 text-xs">48 pages</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-[#0f0f18] border border-[#c9a84c]/10 rounded-xl p-5 card-hover cursor-pointer group">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-16 bg-gradient-to-br from-purple-800 to-purple-900 rounded flex-shrink-0 flex items-center justify-center">
+                                <span class="text-[#c9a84c] text-xs font-bold">02</span>
+                            </div>
+                            <div>
+                                <h4 class="font-heading text-sm font-semibold group-hover:text-[#c9a84c] transition-colors">Cambrure Divine</h4>
+                                <span class="text-[#e8e0d4]/40 text-xs">64 pages</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-[#0f0f18] border border-[#c9a84c]/10 rounded-xl p-5 card-hover cursor-pointer group">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-16 bg-gradient-to-br from-purple-800 to-purple-900 rounded flex-shrink-0 flex items-center justify-center">
+                                <span class="text-[#c9a84c] text-xs font-bold">03</span>
+                            </div>
+                            <div>
+                                <h4 class="font-heading text-sm font-semibold group-hover:text-[#c9a84c] transition-colors">Doigts de Satin</h4>
+                                <span class="text-[#e8e0d4]/40 text-xs">72 pages</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-[#0f0f18] border border-[#c9a84c]/10 rounded-xl p-5 card-hover cursor-pointer group">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-16 bg-gradient-to-br from-purple-800 to-purple-900 rounded flex-shrink-0 flex items-center justify-center">
+                                <span class="text-[#c9a84c] text-xs font-bold">04</span>
+                            </div>
+                            <div>
+                                <h4 class="font-heading text-sm font-semibold group-hover:text-[#c9a84c] transition-colors">Voûte Éternelle</h4>
+                                <span class="text-[#e8e0d4]/40 text-xs">88 pages</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-[#0f0f18] border border-[#c9a84c]/10 rounded-xl p-5 card-hover cursor-pointer group">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-16 bg-gradient-to-br from-purple-800 to-purple-900 rounded flex-shrink-0 flex items-center justify-center">
+                                <span class="text-[#c9a84c] text-xs font-bold">05</span>
+                            </div>
+                            <div>
+                                <h4 class="font-heading text-sm font-semibold group-hover:text-[#c9a84c] transition-colors">Pas de Danse</h4>
+                                <span class="text-[#e8e0d4]/40 text-xs">56 pages</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-[#0f0f18] border border-[#c9a84c]/10 rounded-xl p-5 card-hover cursor-pointer group">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-16 bg-gradient-to-br from-purple-800 to-purple-900 rounded flex-shrink-0 flex items-center justify-center">
+                                <span class="text-[#c9a84c] text-xs font-bold">06</span>
+                            </div>
+                            <div>
+                                <h4 class="font-heading text-sm font-semibold group-hover:text-[#c9a84c] transition-colors">Talon Royal</h4>
+                                <span class="text-[#e8e0d4]/40 text-xs">44 pages</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-[#0f0f18] border border-[#c9a84c]/10 rounded-xl p-5 card-hover cursor-pointer group">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-16 bg-gradient-to-br from-purple-800 to-purple-900 rounded flex-shrink-0 flex items-center justify-center">
+                                <span class="text-[#c9a84c] text-xs font-bold">07</span>
+                            </div>
+                            <div>
+                                <h4 class="font-heading text-sm font-semibold group-hover:text-[#c9a84c] transition-colors">Orteils Dorés</h4>
+                                <span class="text-[#e8e0d4]/40 text-xs">80 pages</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-[#0f0f18] border border-[#c9a84c]/10 rounded-xl p-5 card-hover cursor-pointer group">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-16 bg-gradient-to-br from-purple-800 to-purple-900 rounded flex-shrink-0 flex items-center justify-center">
+                                <span class="text-[#c9a84c] text-xs font-bold">08</span>
+                            </div>
+                            <div>
+                                <h4 class="font-heading text-sm font-semibold group-hover:text-[#c9a84c] transition-colors">DP Chronicles</h4>
+                                <span class="text-[#e8e0d4]/40 text-xs">120 pages</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- Univers DP Section -->
+    <section id="univers" class="py-24 md:py-32 px-6 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-purple-900/5 via-[#0a0a0f] to-purple-900/5"></div>
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-16 reveal-up">
+                <span class="text-[#c9a84c] text-xs tracking-[0.3em] uppercase mb-4 block">Univers Exclusif</span>
+                <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                    L'Univers <span class="gold-gradient">DP</span>
+                </h2>
+                <p class="text-[#e8e0d4]/50 max-w-2xl mx-auto text-lg">
+                    Un monde imaginaire où le fétichisme des pieds devient narration, où chaque création raconte une histoire dans mon univers personnel DP.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
+                <div class="reveal-left">
+                    <div class="gold-border rounded-2xl p-[2px] pulse-glow">
+                        <div class="rounded-2xl overflow-hidden">
+                            <img src="https://image.qwenlm.ai/public_source/87ab1134-fe7d-47c8-b326-6d3527acabfe/1a03dffad-8171-4a53-9049-2340cb1a1532.png" alt="Univers DP" class="w-full h-[400px] object-cover">
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal-right space-y-6">
+                    <h3 class="font-heading text-3xl font-bold">
+                        <span class="gold-gradient">DP</span> — Dark Pedis
+                    </h3>
+                    <p class="text-[#e8e0d4]/60 leading-relaxed">
+                        L'univers DP est mon espace de création libre, un monde où l'art du fétichisme podal se mêle à la fantasy et au récit visuel. Chaque pièce de cet univers explore des thèmes comme la domination, la contemplation et l'adoration à travers des compositions soigneusement orchestrées.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-full bg-[#c9a84c]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <span class="text-[#c9a84c] text-sm">✦</span>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-semibold text-[#e8e0d4] mb-1">Narrative Art</h4>
+                                <p class="text-[#e8e0d4]/40 text-sm">Chaque œuvre DP raconte une histoire, un moment suspendu entre désir et esthétique.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-full bg-[#c9a84c]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <span class="text-[#c9a84c] text-sm"></span>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-semibold text-[#e8e0d4] mb-1">World Building</h4>
+                                <p class="text-[#e8e0d4]/40 text-sm">Un univers cohérent avec ses propres codes, son esthétique et ses personnages récurrents.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-full bg-[#c9a84c]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <span class="text-[#c9a84c] text-sm"></span>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-semibold text-[#e8e0d4] mb-1">Artbooks Exclusifs</h4>
+                                <p class="text-[#e8e0d4]/40 text-sm">Des collections imprimées et numériques disponibles uniquement sur plantédespieds.com.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DP Timeline -->
+            <div class="reveal-up">
+                <h3 class="font-heading text-2xl font-semibold mb-10 text-center">
+                    Chronologie <span class="gold-gradient">DP</span>
+                </h3>
+                <div class="relative">
+                    <div class="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[#c9a84c]/30 to-transparent hidden md:block"></div>
+                    <div class="space-y-8">
+                        <div class="flex flex-col md:flex-row items-center gap-6 md:gap-12">
+                            <div class="md:w-1/2 md:text-right">
+                                <span class="text-[#c9a84c] text-sm font-bold">2022</span>
+                                <h4 class="font-heading text-lg font-semibold mt-1">Naissance de l'Univers DP</h4>
+                                <p class="text-[#e8e0d4]/40 text-sm mt-2">Premières illustrations explorant le thème du fétichisme podal dans un cadre narratif.</p>
+                            </div>
+                            <div class="w-4 h-4 rounded-full bg-[#c9a84c] ring-4 ring-[#c9a84c]/20 flex-shrink-0 z-10"></div>
+                            <div class="md:w-1/2"></div>
+                        </div>
+                        <div class="flex flex-col md:flex-row items-center gap-6 md:gap-12">
+                            <div class="md:w-1/2"></div>
+                            <div class="w-4 h-4 rounded-full bg-[#c9a84c] ring-4 ring-[#c9a84c]/20 flex-shrink-0 z-10"></div>
+                            <div class="md:w-1/2">
+                                <span class="text-[#c9a84c] text-sm font-bold">2023</span>
+                                <h4 class="font-heading text-lg font-semibold mt-1">Premier Artbook DP</h4>
+                                <p class="text-[#e8e0d4]/40 text-sm mt-2">Publication de "Velours Pourpre", premier recueil de l'univers avec 96 pages d'illustrations originales.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row items-center gap-6 md:gap-12">
+                            <div class="md:w-1/2 md:text-right">
+                                <span class="text-[#c9a84c] text-sm font-bold">2024</span>
+                                <h4 class="font-heading text-lg font-semibold mt-1">Expansion de l'Univers</h4>
+                                <p class="text-[#e8e0d4]/40 text-sm mt-2">Création de "Marche Mystique" et développement de la galerie en ligne plantédespieds.com.</p>
+                            </div>
+                            <div class="w-4 h-4 rounded-full bg-[#c9a84c] ring-4 ring-[#c9a84c]/20 flex-shrink-0 z-10"></div>
+                            <div class="md:w-1/2"></div>
+                        </div>
+                        <div class="flex flex-col md:flex-row items-center gap-6 md:gap-12">
+                            <div class="md:w-1/2"></div>
+                            <div class="w-4 h-4 rounded-full bg-[#c9a84c] ring-4 ring-[#c9a84c]/20 flex-shrink-0 z-10 animate-pulse"></div>
+                            <div class="md:w-1/2">
+                                <span class="text-[#c9a84c] text-sm font-bold">2025</span>
+                                <h4 class="font-heading text-lg font-semibold mt-1">Nouveau Chapitre</h4>
+                                <p class="text-[#e8e0d4]/40 text-sm mt-2">Lancement officiel du site et ouverture des commandes d'artbooks exclusifs de l'univers DP.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- Newsletter / CTA -->
+    <section class="py-24 md:py-32 px-6">
+        <div class="max-w-4xl mx-auto text-center reveal-up">
+            <div class="gold-border rounded-3xl p-[2px]">
+                <div class="rounded-3xl bg-gradient-to-b from-[#0f0f18] to-[#1a1a2e] p-10 md:p-16">
+                    <span class="text-[#c9a84c] text-xs tracking-[0.3em] uppercase mb-4 block">Newsletter</span>
+                    <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+                        Restez dans la <span class="gold-gradient">boucle</span>
+                    </h2>
+                    <p class="text-[#e8e0d4]/50 max-w-xl mx-auto mb-10">
+                        Recevez en avant-première mes nouvelles créations, artbooks et contenus exclusifs de l'univers DP directement dans votre boîte mail.
+                    </p>
+                    <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto" onsubmit="handleNewsletter(event)">
+                        <input type="email" placeholder="votre@email.com" required class="flex-1 bg-[#0a0a0f] border border-[#c9a84c]/20 rounded-full px-6 py-4 text-[#e8e0d4] placeholder-[#e8e0d4]/30 focus:outline-none focus:border-[#c9a84c]/60 transition-colors">
+                        <button type="submit" class="btn-primary px-8 py-4 rounded-full text-sm tracking-wider uppercase whitespace-nowrap">
+                            S'inscrire
+                        </button>
+                    </form>
+                    <p class="text-[#e8e0d4]/30 text-xs mt-4">Pas de spam. Désinscription à tout moment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 md:py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal-up">
+                <span class="text-[#c9a84c] text-xs tracking-[0.3em] uppercase mb-4 block">Contact</span>
+                <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                    Me <span class="gold-gradient">Contacter</span>
+                </h2>
+                <p class="text-[#e8e0d4]/50 max-w-2xl mx-auto text-lg">
+                    Pour des commandes personnalisées, collaborations ou toute question sur l'univers DP.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="reveal-left space-y-8">
+                    <div>
+                        <h3 class="font-heading text-xl font-semibold mb-6">Informations</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-[#c9a84c]/10 flex items-center justify-center">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                </div>
+                                <div>
+                                    <p class="text-[#e8e0d4]/40 text-xs uppercase tracking-wider">Email</p>
+                                    <p class="text-[#e8e0d4]">contact@plantedespieds.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-[#c9a84c]/10 flex items-center justify-center">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                </div>
+                                <div>
+                                    <p class="text-[#e8e0d4]/40 text-xs uppercase tracking-wider">Localisation</p>
+                                    <p class="text-[#e8e0d4]">France</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-heading text-xl font-semibold mb-4">Réseaux Sociaux</h3>
+                        <div class="flex gap-4">
+                            <a href="#" class="w-12 h-12 rounded-xl border border-[#c9a84c]/20 flex items-center justify-center hover:bg-[#c9a84c]/10 hover:border-[#c9a84c]/40 transition-all">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+                            </a>
+                            <a href="#" class="w-12 h-12 rounded-xl border border-[#c9a84c]/20 flex items-center justify-center hover:bg-[#c9a84c]/10 hover:border-[#c9a84c]/40 transition-all">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                            </a>
+                            <a href="#" class="w-12 h-12 rounded-xl border border-[#c9a84c]/20 flex items-center justify-center hover:bg-[#c9a84c]/10 hover:border-[#c9a84c]/40 transition-all">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal-right">
+                    <form class="space-y-5" onsubmit="handleContact(event)">
+                        <div class="grid sm:grid-cols-2 gap-5">
+                            <input type="text" placeholder="Nom" required class="bg-[#0f0f18] border border-[#c9a84c]/20 rounded-xl px-5 py-4 text-[#e8e0d4] placeholder-[#e8e0d4]/30 focus:outline-none focus:border-[#c9a84c]/60 transition-colors w-full">
+                            <input type="email" placeholder="Email" required class="bg-[#0f0f18] border border-[#c9a84c]/20 rounded-xl px-5 py-4 text-[#e8e0d4] placeholder-[#e8e0d4]/30 focus:outline-none focus:border-[#c9a84c]/60 transition-colors w-full">
+                        </div>
+                        <select class="bg-[#0f0f18] border border-[#c9a84c]/20 rounded-xl px-5 py-4 text-[#e8e0d4]/60 focus:outline-none focus:border-[#c9a84c]/60 transition-colors w-full appearance-none cursor-pointer">
+                            <option value="">Sujet</option>
+                            <option value="commande">Commande personnalisée</option>
+                            <option value="artbook">Artbook / Collection</option>
+                            <option value="collab">Collaboration</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                        <textarea placeholder="Votre message..." rows="5" required class="bg-[#0f0f18] border border-[#c9a84c]/20 rounded-xl px-5 py-4 text-[#e8e0d4] placeholder-[#e8e0d4]/30 focus:outline-none focus:border-[#c9a84c]/60 transition-colors w-full resize-none"></textarea>
+                        <button type="submit" class="btn-primary w-full py-4 rounded-xl text-sm tracking-wider uppercase">
+                            Envoyer le Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-[#c9a84c]/10 py-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full gold-border flex items-center justify-center">
+                            <div class="w-8 h-8 rounded-full bg-[#0a0a0f] flex items-center justify-center">
+                                <span class="text-[#c9a84c] text-sm font-bold">PdP</span>
+                            </div>
+                        </div>
+                        <span class="font-heading font-semibold text-lg gold-gradient">Planté des Pieds</span>
+                    </div>
+                    <p class="text-[#e8e0d4]/40 text-sm leading-relaxed">
+                        Art fétiche, artbooks exclusifs et univers DP. Une exploration artistique du fétichisme podal.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-heading font-semibold mb-4 text-[#e8e0d4]/80">Navigation</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#accueil" class="text-[#e8e0d4]/40 text-sm hover:text-[#c9a84c] transition-colors">Accueil</a></li>
+                        <li><a href="#galerie" class="text-[#e8e0d4]/40 text-sm hover:text-[#c9a84c] transition-colors">Galerie</a></li>
+                        <li><a href="#artbooks" class="text-[#e8e0d4]/40 text-sm hover:text-[#c9a84c] transition-colors">Artbooks</a></li>
+                        <li><a href="#univers" class="text-[#e8e0d4]/40 text-sm hover:text-[#c9a84c] transition-colors">Univers DP</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-heading font-semibold mb-4 text-[#e8e0d4]/80">Collections</h4>
+                    <ul class="space-y-3">
+                        <li><span class="text-[#e8e0d4]/40 text-sm">Luxe Figures</span></li>
+                        <li><span class="text-[#e8e0d4]/40 text-sm">Velours Pourpre</span></li>
+                        <li><span class="text-[#e8e0d4]/40 text-sm">Marche Mystique</span></li>
+                        <li><span class="text-[#e8e0d4]/40 text-sm">DP Chronicles</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-heading font-semibold mb-4 text-[#e8e0d4]/80">Légal</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-[#e8e0d4]/40 text-sm hover:text-[#c9a84c] transition-colors">Mentions légales</a></li>
+                        <li><a href="#" class="text-[#e8e0d4]/40 text-sm hover:text-[#c9a84c] transition-colors">Politique de confidentialité</a></li>
+                        <li><a href="#" class="text-[#e8e0d4]/40 text-sm hover:text-[#c9a84c] transition-colors">CGV</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section-divider mb-8"></div>
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-[#e8e0d4]/30 text-sm">© 2025 Planté des Pieds. Tous droits réservés.</p>
+                <p class="text-[#e8e0d4]/20 text-xs">Créé avec passion pour l'art fétiche.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero animations
+        const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+        heroTl.to('#hero-badge', { opacity: 1, y: 0, duration: 0.8, delay: 0.3 })
+              .to('#hero-title', { opacity: 1, y: 0, duration: 0.8 }, '-=0.4')
+              .to('#hero-subtitle', { opacity: 1, y: 0, duration: 0.8 }, '-=0.4')
+              .to('#hero-buttons', { opacity: 1, y: 0, duration: 0.8 }, '-=0.4');
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > 100) {
+                navbar.style.background = 'rgba(10,10,15,0.9)';
+                navbar.style.backdropFilter = 'blur(20px)';
+                navbar.style.borderBottom = '1px solid rgba(201,168,76,0.1)';
+            } else {
+                navbar.style.background = 'transparent';
+                navbar.style.backdropFilter = 'none';
+                navbar.style.borderBottom = 'none';
+            }
+            lastScroll = currentScroll;
+        });
+
+        // Scroll reveal animations
+        function setupScrollReveal() {
+            const elements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right');
+            elements.forEach(el => {
+                const direction = el.classList.contains('reveal-left') ? { x: -60, y: 0 } :
+                                  el.classList.contains('reveal-right') ? { x: 60, y: 0 } :
+                                  { x: 0, y: 60 };
+                gsap.fromTo(el, {
+                    opacity: 0,
+                    x: direction.x,
+                    y: direction.y
+                }, {
+                    opacity: 1,
+                    x: 0,
+                    y: 0,
+                    duration: 1,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: el,
+                        start: 'top 85%',
+                        toggleActions: 'play none none none'
+                    }
+                });
+            });
+        }
+        setupScrollReveal();
+
+        // Gallery filter
+        function filterGallery(category, btn) {
+            const items = document.querySelectorAll('#gallery-grid .gallery-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            items.forEach(item => {
+                const itemCat = item.getAttribute('data-category');
+                if (category === 'all' || itemCat === category) {
+                    gsap.to(item, { opacity: 1, scale: 1, duration: 0.4, display: 'block' });
+                } else {
+                    gsap.to(item, { opacity: 0, scale: 0.9, duration: 0.4, display: 'none' });
+                }
+            });
+        }
+
+        // Lightbox
+        function openLightbox(element) {
+            const img = element.querySelector('img');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) closeLightbox();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+
+        // Mobile menu
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const overlay = document.getElementById('mobile-overlay');
+            menu.classList.toggle('open');
+            overlay.classList.toggle('hidden');
+        }
+
+        // Newsletter form
+        function handleNewsletter(e) {
+            e.preventDefault();
+            const form = e.target;
+            const btn = form.querySelector('button');
+            const originalText = btn.textContent;
+            btn.textContent = '✓ Inscrit !';
+            btn.style.background = 'linear-gradient(135deg, #4ade80, #22c55e)';
+            form.reset();
+            setTimeout(() => {
+                btn.textContent = originalText;
+                btn.style.background = '';
+            }, 3000);
+        }
+
+        // Contact form
+        function handleContact(e) {
+            e.preventDefault();
+            const form = e.target;
+            const btn = form.querySelector('button[type="submit"]');
+            const originalText = btn.textContent;
+            btn.textContent = '✓ Message envoyé !';
+            btn.style.background = 'linear-gradient(135deg, #4ade80, #22c55e)';
+            form.reset();
+            setTimeout(() => {
+                btn.textContent = originalText;
+                btn.style.background = '';
+            }, 3000);
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Parallax effect on hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroImg = document.querySelector('#accueil img');
+            if (heroImg && scrolled < window.innerHeight) {
+                heroImg.style.transform = `translateY(${scrolled * 0.3}px) scale(1.1)`;
+            }
+        });
+    </script>
+</body>
+</html>
+
