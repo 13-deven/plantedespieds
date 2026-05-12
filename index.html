@@ -1,20 +1,63 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planté des Pieds — Artbooks & Univers Fétiches</title>
+    <!--<title>feetofsibyl.com  — Art fétiche des pieds & Univers dp</title> -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
-    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+<!-- Balises Meta Essentielles pour FeetOfSibyl.com -->
+
+<!-- 1. Encodage et Viewport (Base technique) -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- 2. Titre de la Page (Ce qui s'affiche dans l'onglet du navigateur et sur Google) -->
+<!-- Stratégie : Nom du Site + Concept Unique + Auteur -->
+<title>Feet of Sibyl | Occult Art & Automatic Writing by dp</title>
+
+<!-- 3. Description Meta (Le texte sous le lien dans les résultats Google) -->
+<!-- Stratégie : Accroche narrative + Mots-clés SEO + Appel à l'action implicite -->
+<meta name="description" content="Discover the dark art of Sibyl Emoria, a 22-year-old medium from the DP Universe. Her feet channel spirits through automatic writing and occult rituals. Exclusive digital art, manga illustrations, and fetish aesthetics by author dp.">
+
+<!-- 4. Mots-Clés (Moins importants pour Google aujourd'hui, mais utiles pour d'autres moteurs ou archives) -->
+<meta name="keywords" content="Sibyl Emoria, Feet of Sibyl, foot fetish art, automatic writing, occult art, dark fantasy manga, DP universe, digital painting, blender 3d art, seinen horror, ritual magic, artistic nudity, mature content">
+
+<!-- 5. Auteur et Copyright -->
+<meta name="author" content="dp">
+<meta name="copyright" content="© 2026 dp - All Rights Reserved">
+
+<!-- 6. Robots (Pour dire à Google d'indexer la page) -->
+<meta name="robots" content="index, follow">
+
+<!-- 7. Open Graph (Pour les réseaux sociaux : Twitter/X, Facebook, Discord) -->
+<!-- C'est CRUCIAL pour que tes liens soient beaux quand partagés -->
+<meta property="og:title" content="Feet of Sibyl | Occult Art by dp">
+<meta property="og:description" content="Enter the sanctuary of Sibyl Emoria. Dark art, automatic writing rituals, and the aesthetic of the DP Universe.">
+<meta property="og:image" content="https://feetofsibyl.com/images/og-share-image.jpg"> <!-- REMPLACE par l'URL réelle de ton image de partage -->
+<meta property="og:url" content="https://feetofsibyl.com">
+<meta property="og:type" content="website">
+
+<!-- 8. Twitter Card (Spécifique pour X/Twitter) -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Feet of Sibyl | Occult Art by dp">
+<meta name="twitter:description" content="Sibyl Emoria's feet channel the abyss. Explore the dark art and automatic writing rituals of the DP Universe.">
+<meta name="twitter:image" content="https://feetofsibyl.com/images/og-share-image.jpg"> <!-- Même image que OG -->
+
+<!-- 9. Disclaimer Légal / Age Gate (Important pour la sécurité du site) -->
+<meta name="rating" content="adult">
+<meta name="distribution" content="global">
+
+
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Satoshi', sans-serif;
-            background: #0a0a0f;
-            color: #e8e0d4;
+            background: #0a0508;
+            color: #f0e6ee;
             overflow-x: hidden;
         }
         h1, h2, h3, h4, .font-heading {
@@ -26,34 +69,31 @@
             width: 100%; height: 100%;
             pointer-events: none;
             z-index: 9999;
-            opacity: 0.03;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.025;
+            background-image: url("image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
         }
         .hero-gradient {
-            background: linear-gradient(180deg, transparent 0%, rgba(10,10,15,0.4) 40%, rgba(10,10,15,0.95) 100%);
+            background: linear-gradient(180deg, transparent 0%, rgba(10,5,8,0.4) 40%, rgba(10,5,8,0.95) 100%);
         }
-        .gold-gradient {
-            background: linear-gradient(135deg, #c9a84c, #f0d68a, #c9a84c, #a07830);
+        .pink-gradient {
+            background: linear-gradient(135deg, #e91e8c, #ff6eb4, #e91e8c, #a01060);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        .gold-border {
-            background: linear-gradient(135deg, #c9a84c, #f0d68a, #c9a84c);
+        .pink-border {
+            background: linear-gradient(135deg, #e91e8c, #ff6eb4, #e91e8c);
             padding: 2px;
         }
-        .gold-border-inner {
-            background: #0a0a0f;
-        }
         .purple-glow {
-            box-shadow: 0 0 60px rgba(120, 60, 180, 0.15), 0 0 120px rgba(120, 60, 180, 0.05);
+            box-shadow: 0 0 60px rgba(200, 30, 140, 0.12), 0 0 120px rgba(200, 30, 140, 0.04);
         }
         .card-hover {
             transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
         }
         .card-hover:hover {
             transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 20px 60px rgba(120, 60, 180, 0.2), 0 0 100px rgba(200, 168, 76, 0.1);
+            box-shadow: 0 20px 60px rgba(200, 30, 140, 0.18), 0 0 100px rgba(255, 110, 180, 0.08);
         }
         .gallery-item {
             position: relative;
@@ -63,7 +103,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, transparent 50%, rgba(10,10,15,0.9) 100%);
+            background: linear-gradient(180deg, transparent 50%, rgba(10,5,8,0.9) 100%);
             opacity: 0;
             transition: opacity 0.4s ease;
         }
@@ -95,7 +135,7 @@
             left: 0;
             width: 0;
             height: 1px;
-            background: linear-gradient(90deg, #c9a84c, #f0d68a);
+            background: linear-gradient(90deg, #e91e8c, #ff6eb4);
             transition: width 0.3s ease;
         }
         .nav-link:hover::after {
@@ -103,11 +143,11 @@
         }
         .section-divider {
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent);
+            background: linear-gradient(90deg, transparent, rgba(233,30,140,0.25), transparent);
         }
         .btn-primary {
-            background: linear-gradient(135deg, #c9a84c, #a07830);
-            color: #0a0a0f;
+            background: linear-gradient(135deg, #e91e8c, #c01870);
+            color: #fff;
             font-weight: 700;
             transition: all 0.3s ease;
             position: relative;
@@ -118,7 +158,7 @@
             position: absolute;
             top: 0; left: -100%;
             width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
             transition: left 0.5s ease;
         }
         .btn-primary:hover::before {
@@ -126,16 +166,16 @@
         }
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(201,168,76,0.3);
+            box-shadow: 0 8px 30px rgba(233,30,140,0.35);
         }
         .btn-outline {
-            border: 1px solid rgba(201,168,76,0.4);
-            color: #c9a84c;
+            border: 1px solid rgba(233,30,140,0.35);
+            color: #e91e8c;
             transition: all 0.3s ease;
         }
         .btn-outline:hover {
-            background: rgba(201,168,76,0.1);
-            border-color: #c9a84c;
+            background: rgba(233,30,140,0.1);
+            border-color: #e91e8c;
             transform: translateY(-2px);
         }
         .marquee-track {
@@ -146,24 +186,17 @@
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
         .pulse-glow {
             animation: pulseGlow 3s ease-in-out infinite;
         }
         @keyframes pulseGlow {
-            0%, 100% { box-shadow: 0 0 20px rgba(201,168,76,0.1); }
-            50% { box-shadow: 0 0 40px rgba(201,168,76,0.2), 0 0 80px rgba(120,60,180,0.1); }
+            0%, 100% { box-shadow: 0 0 20px rgba(233,30,140,0.08); }
+            50% { box-shadow: 0 0 40px rgba(233,30,140,0.18), 0 0 80px rgba(180,20,200,0.08); }
         }
         .lightbox {
             position: fixed;
             inset: 0;
-            background: rgba(5,5,10,0.95);
+            background: rgba(5,2,4,0.96);
             z-index: 10000;
             display: flex;
             align-items: center;
@@ -193,7 +226,7 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            color: #c9a84c;
+            color: #e91e8c;
             font-size: 2rem;
             transition: transform 0.3s ease;
         }
@@ -204,11 +237,11 @@
             transition: all 0.3s ease;
         }
         .filter-btn.active {
-            background: linear-gradient(135deg, #c9a84c, #a07830);
-            color: #0a0a0f;
+            background: linear-gradient(135deg, #e91e8c, #c01870);
+            color: #fff;
         }
         .filter-btn:not(.active):hover {
-            background: rgba(201,168,76,0.1);
+            background: rgba(233,30,140,0.1);
         }
         .scroll-indicator {
             animation: scrollBounce 2s ease-in-out infinite;
@@ -217,17 +250,17 @@
             0%, 100% { transform: translateY(0); opacity: 1; }
             50% { transform: translateY(10px); opacity: 0.5; }
         }
-        .text-shadow-gold {
-            text-shadow: 0 0 40px rgba(201,168,76,0.3);
+        .text-shadow-pink {
+            text-shadow: 0 0 40px rgba(233,30,140,0.25);
         }
         ::-webkit-scrollbar {
             width: 6px;
         }
         ::-webkit-scrollbar-track {
-            background: #0a0a0f;
+            background: #0a0508;
         }
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #c9a84c, #604020);
+            background: linear-gradient(180deg, #e91e8c, #601040);
             border-radius: 3px;
         }
         .mobile-menu {
@@ -237,10 +270,50 @@
         .mobile-menu.open {
             transform: translateX(0);
         }
+        .stat-number {
+            background: linear-gradient(135deg, #ff6eb4, #e91e8c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
     </style>
 </head>
 <body>
     <div class="grain-overlay"></div>
+
+    <!-- Age Gate -->
+    <div id="age-gate" class="fixed inset-0 z-[10001] flex items-center justify-center p-6" style="background: #0a0508;">
+        <div class="max-w-md w-full text-center">
+            <div class="pink-border rounded-3xl p-[2px]">
+                <div class="rounded-3xl bg-[#0f0810] p-10 md:p-14">
+                    <div class="mb-8">
+                        <div class="w-20 h-20 rounded-full pink-border mx-auto flex items-center justify-center mb-6">
+                            <div class="w-[72px] h-[72px] rounded-full bg-[#0f0810] flex items-center justify-center">
+                                <span class="text-[#e91e8c] text-xl font-bold font-heading">pdp</span>
+                            </div>
+                        </div>
+                        <span class="text-[#e91e8c] text-xs tracking-[0.3em] uppercase mb-2 block font-heading">Avertissement contenu</span>
+                        <h2 class="font-heading text-2xl md:text-3xl font-bold mb-3">
+                            Contenu réservé aux <span class="pink-gradient">adultes</span>
+                        </h2>
+                        <div class="w-16 h-0.5 bg-gradient-to-r from-transparent via-[#e91e8c]/40 to-transparent mx-auto mb-6"></div>
+                        <p class="text-[#f0e6ee]/50 text-sm leading-relaxed mb-2">
+                            Ce site <strong class="text-[#e91e8c]/80">FeetOfSibyl.com</strong> contient des œuvres artistiques à thématique fétichiste des pieds, illustrées et photographiées.
+                        </p>
+                        <p class="text-[#f0e6ee]/40 text-xs leading-relaxed mb-8">
+                            En entrant, tu certifies avoir <strong class="text-[#e91e8c]/80">18 ans ou plus</strong> et accepter de visualiser ce contenu artistique.
+                        </p>
+                    </div>
+                    <button onclick="enterSite()" class="btn-primary w-full py-4 rounded-full text-sm tracking-wider uppercase font-bold mb-3">
+                        J'ai 18+ — Entrer sur le site
+                    </button>
+                    <a href="https://www.google.com" class="text-[#f0e6ee]/30 text-xs hover:text-[#f0e6ee]/50 transition-colors underline decoration-[#e91e8c]/30 underline-offset-2">
+                        Je suis mineur — Quitter le site
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox">
@@ -252,38 +325,38 @@
     <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
             <a href="#" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-full gold-border flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <div class="w-8 h-8 rounded-full bg-[#0a0a0f] flex items-center justify-center">
-                        <span class="text-[#c9a84c] text-sm font-bold">PdP</span>
+                <div class="w-10 h-10 rounded-full pink-border flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <div class="w-8 h-8 rounded-full bg-[#0a0508] flex items-center justify-center">
+                        <span class="text-[#e91e8c] text-sm font-bold">dp</span>
                     </div>
                 </div>
                 <span class="font-heading font-semibold text-lg tracking-wide hidden sm:block">
-                    <span class="gold-gradient">Planté des Pieds</span>
+                    <span class="pink-gradient">Feet Of SIBYL</span>
                 </span>
             </a>
             <div class="hidden md:flex items-center gap-8">
-                <a href="#accueil" class="nav-link text-sm tracking-wider uppercase text-[#e8e0d4]/70 hover:text-[#c9a84c] transition-colors">Accueil</a>
-                <a href="#galerie" class="nav-link text-sm tracking-wider uppercase text-[#e8e0d4]/70 hover:text-[#c9a84c] transition-colors">Galerie</a>
-                <a href="#artbooks" class="nav-link text-sm tracking-wider uppercase text-[#e8e0d4]/70 hover:text-[#c9a84c] transition-colors">Artbooks</a>
-                <a href="#univers" class="nav-link text-sm tracking-wider uppercase text-[#e8e0d4]/70 hover:text-[#c9a84c] transition-colors">Univers DP</a>
+                <a href="#accueil" class="nav-link text-sm tracking-wider uppercase text-[#f0e6ee]/70 hover:text-[#e91e8c] transition-colors">Accueil</a>
+                <a href="#galerie" class="nav-link text-sm tracking-wider uppercase text-[#f0e6ee]/70 hover:text-[#e91e8c] transition-colors">Galerie</a>
+                <a href="#artbooks" class="nav-link text-sm tracking-wider uppercase text-[#f0e6ee]/70 hover:text-[#e91e8c] transition-colors">Artbooks</a>
+                <a href="#univers" class="nav-link text-sm tracking-wider uppercase text-[#f0e6ee]/70 hover:text-[#e91e8c] transition-colors">Univers dp</a>
                 <a href="#contact" class="btn-primary px-6 py-2.5 rounded-full text-sm tracking-wider uppercase">Contact</a>
             </div>
             <button id="menu-toggle" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 cursor-pointer" onclick="toggleMenu()">
-                <span class="menu-line w-6 h-0.5 bg-[#c9a84c] transition-all duration-300"></span>
-                <span class="menu-line w-6 h-0.5 bg-[#c9a84c] transition-all duration-300"></span>
-                <span class="menu-line w-4 h-0.5 bg-[#c9a84c] transition-all duration-300"></span>
+                <span class="menu-line w-6 h-0.5 bg-[#e91e8c] transition-all duration-300"></span>
+                <span class="menu-line w-6 h-0.5 bg-[#e91e8c] transition-all duration-300"></span>
+                <span class="menu-line w-4 h-0.5 bg-[#e91e8c] transition-all duration-300"></span>
             </button>
         </div>
     </nav>
 
     <!-- Mobile Menu -->
-    <div class="mobile-menu fixed top-0 right-0 w-80 h-full bg-[#0f0f18] z-50 p-8 flex flex-col gap-6" id="mobile-menu">
-        <button class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center text-[#c9a84c] text-xl" onclick="toggleMenu()">✕</button>
+    <div class="mobile-menu fixed top-0 right-0 w-80 h-full bg-[#0f0810] z-50 p-8 flex flex-col gap-6" id="mobile-menu">
+        <button class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center text-[#e91e8c] text-xl" onclick="toggleMenu()">✕</button>
         <div class="mt-16 flex flex-col gap-6">
-            <a href="#accueil" class="text-lg font-heading tracking-wider text-[#e8e0d4]/80 hover:text-[#c9a84c] transition-colors" onclick="toggleMenu()">Accueil</a>
-            <a href="#galerie" class="text-lg font-heading tracking-wider text-[#e8e0d4]/80 hover:text-[#c9a84c] transition-colors" onclick="toggleMenu()">Galerie</a>
-            <a href="#artbooks" class="text-lg font-heading tracking-wider text-[#e8e0d4]/80 hover:text-[#c9a84c] transition-colors" onclick="toggleMenu()">Artbooks</a>
-            <a href="#univers" class="text-lg font-heading tracking-wider text-[#e8e0d4]/80 hover:text-[#c9a84c] transition-colors" onclick="toggleMenu()">Univers DP</a>
+            <a href="#accueil" class="text-lg font-heading tracking-wider text-[#f0e6ee]/80 hover:text-[#e91e8c] transition-colors" onclick="toggleMenu()">Accueil</a>
+            <a href="#galerie" class="text-lg font-heading tracking-wider text-[#f0e6ee]/80 hover:text-[#e91e8c] transition-colors" onclick="toggleMenu()">Galerie</a>
+            <a href="#artbooks" class="text-lg font-heading tracking-wider text-[#f0e6ee]/80 hover:text-[#e91e8c] transition-colors" onclick="toggleMenu()">Artbooks</a>
+            <a href="#univers" class="text-lg font-heading tracking-wider text-[#f0e6ee]/80 hover:text-[#e91e8c] transition-colors" onclick="toggleMenu()">Univers dp</a>
             <a href="#contact" class="btn-primary px-6 py-3 rounded-full text-center mt-4" onclick="toggleMenu()">Contact</a>
         </div>
     </div>
@@ -292,21 +365,23 @@
     <!-- Hero Section -->
     <section id="accueil" class="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0">
-            <img src="https://image.qwenlm.ai/public_source/87ab1134-fe7d-47c8-b326-6d3527acabfe/1510acad4-4a09-4f64-a489-dd3e1f163b50.png" alt="Hero" class="w-full h-full object-cover">
+            <!-- Image de démonstration -->
+            <img src="assets/gallery/dp-background.png" alt="Hero plante des pieds" class="w-full h-full object-cover">
             <div class="hero-gradient absolute inset-0"></div>
         </div>
         <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
             <div class="mb-6 opacity-0 translate-y-8" id="hero-badge">
-                <span class="inline-block px-5 py-2 rounded-full border border-[#c9a84c]/30 text-[#c9a84c] text-xs tracking-[0.3em] uppercase">
-                    Art Fétiche & Univers DP
+                <span class="inline-block px-5 py-2 rounded-full border border-[#e91e8c]/30 text-[#e91e8c] text-xs tracking-[0.3em] uppercase">
+                    Art fétiche & Univers dp
                 </span>
             </div>
             <h1 class="font-heading text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-6 opacity-0 translate-y-8" id="hero-title">
-                <span class="block">Planté</span>
-                <span class="block gold-gradient text-shadow-gold">des Pieds</span>
+                <span class="block">Feet Of</span>
+                <span class="block pink-gradient text-shadow-pink">SIBYL</span>
+                <p class="text-lg sm:text-xl md:text-2xl text-[#f0e6ee]">Art & Automatic Writing by dp</span>
             </h1>
-            <p class="text-lg sm:text-xl md:text-2xl text-[#e8e0d4]/60 max-w-2xl mx-auto mb-10 leading-relaxed opacity-0 translate-y-8" id="hero-subtitle">
-                Une exploration artistique du fétichisme des pieds à travers artbooks, illustrations et créations visuelles uniques.
+            <p class="text-lg sm:text-xl md:text-2xl text-[#f0e6ee]/60 max-w-2xl mx-auto mb-10 leading-relaxed opacity-0 translate-y-8" id="hero-subtitle">
+                Une exploration artistique du fétichisme des pieds à travers artbooks, illustrations et créations visuelles de l'univers dp.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 translate-y-8" id="hero-buttons">
                 <a href="#galerie" class="btn-primary px-10 py-4 rounded-full text-base tracking-wider uppercase">
@@ -319,8 +394,8 @@
         </div>
         <div class="absolute bottom-8 left-1/2 -translate-x-1/2 scroll-indicator">
             <svg width="24" height="40" viewBox="0 0 24 40" fill="none">
-                <rect x="1" y="1" width="22" height="38" rx="11" stroke="#c9a84c" stroke-opacity="0.4" stroke-width="2"/>
-                <circle cx="12" cy="10" r="3" fill="#c9a84c" opacity="0.6">
+                <rect x="1" y="1" width="22" height="38" rx="11" stroke="#e91e8c" stroke-opacity="0.4" stroke-width="2"/>
+                <circle cx="12" cy="10" r="3" fill="#e91e8c" opacity="0.6">
                     <animate attributeName="cy" values="10;22;10" dur="2s" repeatCount="indefinite"/>
                     <animate attributeName="opacity" values="0.6;0.2;0.6" dur="2s" repeatCount="indefinite"/>
                 </circle>
@@ -329,13 +404,13 @@
     </section>
 
     <!-- Marquee -->
-    <div class="py-6 border-y border-[#c9a84c]/10 bg-[#0a0a0f]/80 backdrop-blur-sm overflow-hidden">
+    <div class="py-6 border-y border-[#e91e8c]/10 bg-[#0a0508]/80 backdrop-blur-sm overflow-hidden">
         <div class="marquee-track whitespace-nowrap">
-            <span class="inline-flex items-center gap-8 px-4 text-[#e8e0d4]/30 text-sm tracking-[0.4em] uppercase font-heading">
-                <span>✦ Art Fétiche</span><span>✦ Planté des Pieds</span><span>✦ Univers DP</span><span> Artbooks Exclusifs</span><span>✦ Créations Originales</span><span>✦ Galerie Sensuelle</span><span>✦ Art Fétiche</span><span>✦ Planté des Pieds</span><span>✦ Univers DP</span><span> Artbooks Exclusifs</span><span> Créations Originales</span><span>✦ Galerie Sensuelle</span>
+            <span class="inline-flex items-center gap-8 px-4 text-[#f0e6ee]/25 text-sm tracking-[0.4em] uppercase font-heading">
+                <span>✦ Art Fétiche</span><span>✦ plante des pieds</span><span>✦ Univers dp</span><span> Artbooks Exclusifs</span><span>✦ Créations Originales</span><span>✦ Galerie Sensuelle</span><span>✦ Art Fétiche</span><span>✦ plante des pieds</span><span>✦ Univers dp</span><span> Artbooks Exclusifs</span><span> Créations Originales</span><span>✦ Galerie Sensuelle</span>
             </span>
-            <span class="inline-flex items-center gap-8 px-4 text-[#e8e0d4]/30 text-sm tracking-[0.4em] uppercase font-heading">
-                <span> Art Fétiche</span><span>✦ Planté des Pieds</span><span>✦ Univers DP</span><span>✦ Artbooks Exclusifs</span><span>✦ Créations Originales</span><span>✦ Galerie Sensuelle</span><span>✦ Art Fétiche</span><span>✦ Planté des Pieds</span><span>✦ Univers DP</span><span>✦ Artbooks Exclusifs</span><span>✦ Créations Originales</span><span> Galerie Sensuelle</span>
+            <span class="inline-flex items-center gap-8 px-4 text-[#f0e6ee]/25 text-sm tracking-[0.4em] uppercase font-heading">
+                <span> Art Fétiche</span><span>✦ plante des pieds</span><span>✦ Univers dp</span><span>✦ Artbooks Exclusifs</span><span>✦ Créations Originales</span><span>✦ Galerie Sensuelle</span><span>✦ Art Fétiche</span><span>✦ plante des pieds</span><span>✦ Univers dp</span><span>✦ Artbooks Exclusifs</span><span>✦ Créations Originales</span><span> Galerie Sensuelle</span>
             </span>
         </div>
     </div>
@@ -344,39 +419,40 @@
     <section class="py-24 md:py-32 px-6">
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
             <div class="reveal-left">
-                <span class="text-[#c9a84c] text-xs tracking-[0.3em] uppercase mb-4 block">À propos</span>
+                <span class="text-[#e91e8c] text-xs tracking-[0.3em] uppercase mb-4 block">À propos</span>
                 <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                    L'art de<br><span class="gold-gradient">l'adoration</span><br>des pieds
+                    L'art de<br><span class="pink-gradient">l'adoration</span><br>des pieds
                 </h2>
-                <p class="text-[#e8e0d4]/60 text-lg leading-relaxed mb-6">
-                    Bienvenue dans l'univers de <strong class="text-[#c9a84c]">Planté des Pieds</strong>. Un espace dédié à la célébration artistique du fétichisme podal à travers des créations visuelles, des artbooks exclusifs et des illustrations qui explorent ce thème avec élégance et sensualité.
+                <p class="text-[#f0e6ee]/60 text-lg leading-relaxed mb-6">
+                    Bienvenue dans l'univers de <strong class="text-[#e91e8c]">SIBYL EMORIA</strong>. Un espace dédié à la célébration artistique du fétichisme podal à travers des créations visuelles, des artbooks exclusifs et des illustrations qui explorent ce thème avec élégance et sensualité.
                 </p>
-                <p class="text-[#e8e0d4]/50 leading-relaxed mb-8">
-                    Mon travail se situe à l'intersection de l'art érotique et de l'illustration narrative, créant un univers riche où chaque pied raconté, chaque pose capturée devient une œuvre à part entière. De mes artbooks fétiches favoris à mes propres créations dans l'univers DP, découvrez une collection pensée avec passion.
+                <p class="text-[#f0e6ee]/50 leading-relaxed mb-8">
+                    Mon travail se situe à l'intersection de l'art érotique et de l'illustration narrative, créant un univers riche où chaque pied raconté, chaque pose capturée devient une œuvre à part entière. De mes artbooks fétiches favoris à mes propres créations dans l'univers dp, découvre une collection pensée avec passion.
                 </p>
                 <div class="flex gap-8">
                     <div>
-                        <span class="text-3xl font-heading font-bold gold-gradient">50+</span>
-                        <p class="text-[#e8e0d4]/40 text-sm mt-1">Œuvres créées</p>
+                        <span class="text-3xl font-heading font-bold stat-number">50+</span>
+                        <p class="text-[#f0e6ee]/40 text-sm mt-1">Œuvres créées</p>
                     </div>
                     <div>
-                        <span class="text-3xl font-heading font-bold gold-gradient">12</span>
-                        <p class="text-[#e8e0d4]/40 text-sm mt-1">Artbooks en collection</p>
+                        <span class="text-3xl font-heading font-bold stat-number">12</span>
+                        <p class="text-[#f0e6ee]/40 text-sm mt-1">Artbooks en collection</p>
                     </div>
                     <div>
-                        <span class="text-3xl font-heading font-bold gold-gradient">DP</span>
-                        <p class="text-[#e8e0d4]/40 text-sm mt-1">Univers exclusif</p>
+                        <span class="text-3xl font-heading font-bold stat-number">dp</span>
+                        <p class="text-[#f0e6ee]/40 text-sm mt-1">Univers exclusif</p>
                     </div>
                 </div>
             </div>
             <div class="reveal-right relative">
-                <div class="gold-border rounded-2xl p-[2px] pulse-glow">
+                <div class="pink-border rounded-2xl p-[2px] pulse-glow">
                     <div class="rounded-2xl overflow-hidden">
-                        <img src="https://image.qwenlm.ai/public_source/87ab1134-fe7d-47c8-b326-6d3527acabfe/1c2b3ac6d-ca8c-4f93-99a7-739d2ba2fce8.png" alt="Art feet" class="w-full h-[500px] object-cover">
+                        <!-- Image de démonstration -->
+                        <img src="assets/gallery/adoration.png" alt="Art pieds" class="w-full h-[500px] object-cover">
                     </div>
                 </div>
-                <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-[#c9a84c]/20 to-transparent rounded-full blur-3xl"></div>
-                <div class="absolute -top-6 -right-6 w-40 h-40 bg-gradient-to-br from-purple-800/20 to-transparent rounded-full blur-3xl"></div>
+                <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-[#e91e8c]/15 to-transparent rounded-full blur-3xl"></div>
+                <div class="absolute -top-6 -right-6 w-40 h-40 bg-gradient-to-br from-purple-900/20 to-transparent rounded-full blur-3xl"></div>
             </div>
         </div>
     </section>
@@ -387,64 +463,70 @@
     <section id="galerie" class="py-24 md:py-32 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16 reveal-up">
-                <span class="text-[#c9a84c] text-xs tracking-[0.3em] uppercase mb-4 block">Portfolio</span>
+                <span class="text-[#e91e8c] text-xs tracking-[0.3em] uppercase mb-4 block">Portfolio</span>
                 <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                    Ma <span class="gold-gradient">Galerie</span>
+                    Ma <span class="pink-gradient">Galerie</span>
                 </h2>
-                <p class="text-[#e8e0d4]/50 max-w-2xl mx-auto text-lg">
-                    Explorez mes créations artistiques dédiées au fétichisme des pieds, chaque œuvre est une invitation à la contemplation sensuelle.
+                <p class="text-[#f0e6ee]/50 max-w-2xl mx-auto text-lg">
+                    Explore mes créations artistiques dédiées au fétichisme des pieds, chaque œuvre est une invitation à la contemplation sensuelle.
                 </p>
             </div>
 
             <!-- Filter Buttons -->
             <div class="flex flex-wrap justify-center gap-3 mb-12 reveal-up">
                 <button class="filter-btn active px-6 py-2.5 rounded-full text-sm tracking-wider" onclick="filterGallery('all', this)">Tout</button>
-                <button class="filter-btn px-6 py-2.5 rounded-full text-sm tracking-wider text-[#e8e0d4]/60" onclick="filterGallery('illustration', this)">Illustrations</button>
-                <button class="filter-btn px-6 py-2.5 rounded-full text-sm tracking-wider text-[#e8e0d4]/60" onclick="filterGallery('photo', this)">Photographies</button>
-                <button class="filter-btn px-6 py-2.5 rounded-full text-sm tracking-wider text-[#e8e0d4]/60" onclick="filterGallery('dp', this)">Univers DP</button>
+                <button class="filter-btn px-6 py-2.5 rounded-full text-sm tracking-wider text-[#f0e6ee]/60" onclick="filterGallery('illustration', this)">Illustrations</button>
+                <button class="filter-btn px-6 py-2.5 rounded-full text-sm tracking-wider text-[#f0e6ee]/60" onclick="filterGallery('photo', this)">Photographies</button>
+                <button class="filter-btn px-6 py-2.5 rounded-full text-sm tracking-wider text-[#f0e6ee]/60" onclick="filterGallery('dp', this)">Univers dp</button>
             </div>
 
             <!-- Gallery Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
                 <div class="gallery-item rounded-xl card-hover cursor-pointer reveal-up" data-category="illustration" onclick="openLightbox(this)">
-                    <img src="https://image.qwenlm.ai/public_source/87ab1134-fe7d-47c8-b326-6d3527acabfe/1510acad4-4a09-4f64-a489-dd3e1f163b50.png" alt="Illustration pieds" class="w-full h-72 object-cover rounded-xl">
+                    <!-- Image de démonstration -->
+                    <img src="assets/gallery/bain.png" alt="Illustration pieds plante des pieds" class="w-full h-72 object-cover rounded-xl">
                     <div class="overlay-content">
-                        <span class="text-[#c9a84c] text-xs tracking-wider uppercase">Illustration</span>
-                        <h3 class="font-heading text-lg font-semibold mt-1">Élévation Dorée</h3>
+                        <span class="text-[#e91e8c] text-xs tracking-wider uppercase">Illustration</span>
+                        <h3 class="font-heading text-lg font-semibold mt-1">Élévation Rose</h3>
                     </div>
                 </div>
                 <div class="gallery-item rounded-xl card-hover cursor-pointer reveal-up" data-category="photo" onclick="openLightbox(this)">
-                    <img src="https://image.qwenlm.ai/public_source/87ab1134-fe7d-47c8-b326-6d3527acabfe/1a7a79904-fcae-4284-9087-10a100c6651b.png" alt="Photo artistique" class="w-full h-72 object-cover rounded-xl">
+                    <!-- Image de démonstration -->
+                    <img src="assets/gallery/pied.png" alt="Photo artistique" class="w-full h-72 object-cover rounded-xl">
                     <div class="overlay-content">
-                        <span class="text-[#c9a84c] text-xs tracking-wider uppercase">Photographie</span>
+                        <span class="text-[#e91e8c] text-xs tracking-wider uppercase">Photographie</span>
                         <h3 class="font-heading text-lg font-semibold mt-1">Velours & Lumière</h3>
                     </div>
                 </div>
                 <div class="gallery-item rounded-xl card-hover cursor-pointer reveal-up" data-category="dp" onclick="openLightbox(this)">
-                    <img src="https://image.qwenlm.ai/public_source/87ab1134-fe7d-47c8-b326-6d3527acabfe/1a03dffad-8171-4a53-9049-2340cb1a1532.png" alt="Univers DP" class="w-full h-72 object-cover rounded-xl">
+                    <!-- Image de démonstration -->
+                    <img src="assets/gallery/univers-dp.png" alt="Univers dp" class="w-full h-72 object-cover rounded-xl">
                     <div class="overlay-content">
-                        <span class="text-[#c9a84c] text-xs tracking-wider uppercase">Univers DP</span>
+                        <span class="text-[#e91e8c] text-xs tracking-wider uppercase">Univers dp</span>
                         <h3 class="font-heading text-lg font-semibold mt-1">Marche Céleste</h3>
                     </div>
                 </div>
                 <div class="gallery-item rounded-xl card-hover cursor-pointer reveal-up" data-category="illustration" onclick="openLightbox(this)">
-                    <img src="https://image.qwenlm.ai/public_source/87ab1134-fe7d-47c8-b326-6d3527acabfe/1c2b3ac6d-ca8c-4f93-99a7-739d2ba2fce8.png" alt="Art cadre" class="w-full h-72 object-cover rounded-xl">
+                    <!-- Image de démonstration -->
+                    <img src="assets/gallery/illustration-01.webp" alt="Art pieds cadre" class="w-full h-72 object-cover rounded-xl">
                     <div class="overlay-content">
-                        <span class="text-[#c9a84c] text-xs tracking-wider uppercase">Illustration</span>
-                        <h3 class="font-heading text-lg font-semibold mt-1">Cadre d'Or</h3>
+                        <span class="text-[#e91e8c] text-xs tracking-wider uppercase">Illustration</span>
+                        <h3 class="font-heading text-lg font-semibold mt-1">Cadre de Soie</h3>
                     </div>
                 </div>
                 <div class="gallery-item rounded-xl card-hover cursor-pointer reveal-up" data-category="photo" onclick="openLightbox(this)">
-                    <img src="https://image.qwenlm.ai/public_source/87ab1134-fe7d-47c8-b326-6d3527acabfe/1a7a79904-fcae-4284-9087-10a100c6651b.png" alt="Galerie" class="w-full h-72 object-cover rounded-xl">
+                    <!-- Image de démonstration -->
+                    <img src="assets/gallery/photo1.webp" alt="Galerie photo" class="w-full h-72 object-cover rounded-xl">
                     <div class="overlay-content">
-                        <span class="text-[#c9a84c] text-xs tracking-wider uppercase">Photographie</span>
-                        <h3 class="font-heading text-lg font-semibold mt-1">Ombre & Soie</h3>
+                        <span class="text-[#e91e8c] text-xs tracking-wider uppercase">Photographie</span>
+                        <h3 class="font-heading text-lg font-semibold mt-1">Ombre & Satin</h3>
                     </div>
                 </div>
                 <div class="gallery-item rounded-xl card-hover cursor-pointer reveal-up" data-category="dp" onclick="openLightbox(this)">
-                    <img src="https://image.qwenlm.ai/public_source/87ab1134-fe7d-47c8-b326-6d3527acabfe/1a03dffad-8171-4a53-9049-2340cb1a1532.png" alt="DP Fantasy" class="w-full h-72 object-cover rounded-xl">
+                    <!-- Image de démonstration -->
+                    <img src="assets/gallery/univers-dp.webp" alt="dp Fantasy" class="w-full h-72 object-cover rounded-xl">
                     <div class="overlay-content">
-                        <span class="text-[#c9a84c] text-xs tracking-wider uppercase">Univers DP</span>
+                        <span class="text-[#e91e8c] text-xs tracking-wider uppercase">Univers dp</span>
                         <h3 class="font-heading text-lg font-semibold mt-1">Rune & Éclat</h3>
                     </div>
                 </div>
@@ -458,11 +540,11 @@
     <section id="artbooks" class="py-24 md:py-32 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16 reveal-up">
-                <span class="text-[#c9a84c] text-xs tracking-[0.3em] uppercase mb-4 block">Collection</span>
+                <span class="text-[#e91e8c] text-xs tracking-[0.3em] uppercase mb-4 block">Collection</span>
                 <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                    Mes <span class="gold-gradient">Artbooks</span> Fétiches
+                    Mes <span class="pink-gradient">Artbooks</span> Fétiches
                 </h2>
-                <p class="text-[#e8e0d4]/50 max-w-2xl mx-auto text-lg">
+                <p class="text-[#f0e6ee]/50 max-w-2xl mx-auto text-lg">
                     Une sélection curated d'artbooks qui m'inspirent et façonnent mon univers créatif autour du fétichisme des pieds.
                 </p>
             </div>
@@ -470,20 +552,29 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Artbook 1 -->
                 <div class="group reveal-up">
-                    <div class="gold-border rounded-xl p-[2px] card-hover">
-                        <div class="rounded-xl overflow-hidden bg-[#0f0f18]">
+                    <div class="pink-border rounded-xl p-[2px] card-hover">
+                        <div class="rounded-xl overflow-hidden bg-[#0f0810]">
                             <div class="relative overflow-hidden">
-                                <img src="https://image.qwenlm.ai/public_source/87ab1134-fe7d-47c8-b326-6d3527acabfe/1e6c58ec5-4ebc-4176-bbd5-4a9357a7e75d.png" alt="Artbook" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-700">
-                                <div class="absolute top-4 right-4 bg-[#c9a84c] text-[#0a0a0f] text-xs font-bold px-3 py-1 rounded-full">FAVORI</div>
+                                <!-- Image de démonstration -->
+                                <img src="assets/gallery/artbooks.png" alt="Artbook Luxe Figures" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-700">
+                                <div class="absolute top-4 right-4 bg-[#e91e8c] text-white text-xs font-bold px-3 py-1 rounded-full">FAVORI</div>
                             </div>
                             <div class="p-6">
-                                <span class="text-[#c9a84c] text-xs tracking-wider uppercase">Artbook • 2024</span>
-                                <h3 class="font-heading text-xl font-semibold mt-2 mb-3">Luxe Figures</h3>
-                                <p class="text-[#e8e0d4]/50 text-sm leading-relaxed mb-4">
-                                    Collection exclusive de photographies artistiques mettant en valeur la beauté sculpturale des pieds. Édition limitée numérotée.
+                                <span class="text-[#e91e8c] text-xs tracking-wider uppercase">Artbook • 2024</span>
+                                <h3 class="font-heading text-xl font-semibold mt-2 mb-3">Pas A Pas</h3>
+                                <p class="text-[#f0e6ee]/50 text-sm leading-relaxed mb-4">
+                                    « PAS À PAS : L’Art et l’Élégance des Pieds Féminins »
+Le mot de l’éditeur :
+Et si la grâce se trouvait au bout du chemin ? Avec un jeu de mots malin, Pas à Pas vous invite à découvrir une vision artistique inédite du pied féminin.
+<br>
+En véritable passionné du dessin et du détail, l’auteur signe ici un artbook élégant et audacieux où chaque trait compte.
+<br>
+Pas à Pas n’est pas qu’un simple recueil, c’est un véritable hommage au dessin et à la sensualité subtile, destiné aux collectionneurs et aux amateurs de belles illustrations.
+<br>
+Pour les connaisseurs, les fétichistes du détail et les amoureux du crayon. Une pièce rare pour vos étagères..
                                 </p>
                                 <div class="flex items-center justify-between">
-                                    <span class="text-[#e8e0d4]/40 text-xs">128 pages</span>
+                                    <span class="text-[#f0e6ee]/40 text-xs">128 pages</span>
                                     <button class="btn-outline px-5 py-2 rounded-full text-xs tracking-wider uppercase">Détails</button>
                                 </div>
                             </div>
@@ -493,19 +584,26 @@
 
                 <!-- Artbook 2 -->
                 <div class="group reveal-up">
-                    <div class="gold-border rounded-xl p-[2px] card-hover">
-                        <div class="rounded-xl overflow-hidden bg-[#0f0f18]">
+                    <div class="pink-border rounded-xl p-[2px] card-hover">
+                        <div class="rounded-xl overflow-hidden bg-[#0f0810]">
                             <div class="relative overflow-hidden">
-                                <img src="https://image.qwenlm.ai/public_source/87ab1134-fe7d-47c8-b326-6d3527acabfe/1c2b3ac6d-ca8c-4f93-99a7-739d2ba2fce8.png" alt="Artbook" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-700">
+                                <!-- Image de démonstration -->
+                                <img src="assets/gallery/artbooks2023.png" alt="Artbook Velours Pourpre" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-700">
                             </div>
                             <div class="p-6">
-                                <span class="text-[#c9a84c] text-xs tracking-wider uppercase">Artbook • 2023</span>
-                                <h3 class="font-heading text-xl font-semibold mt-2 mb-3">Velours Pourpre</h3>
-                                <p class="text-[#e8e0d4]/50 text-sm leading-relaxed mb-4">
-                                    Un voyage à travers les textures et les couleurs du fétichisme podal. Illustrations originales et photographies soigneusement sélectionnées.
+                                <span class="text-[#e91e8c] text-xs tracking-wider uppercase">Artbook • 2023</span>
+                                <h3 class="font-heading text-xl font-semibold mt-2 mb-3">Empreintes Délicates</h3>
+                                <p class="text-[#f0e6ee]/50 text-sm leading-relaxed mb-4">
+                                    Empreintes Délicates – Un Voyage Visuel dans la Beauté des Pieds Féminins
+
+Plongez dans un univers où le dessin et l’anatomie se marient avec élégance. Avec Empreintes Délicates, Deven Phobe transcende les clichés pour offrir une véritable célébration artistique du pied féminin.
+<br><br>
+Entre couleurs vibrantes et traits épurés, cet artbook est une invitation à regarder au-delà de l’image. Ce n’est pas un simple recueil, c’est une conversation visuelle, puissante et sans tabou.
+<br><br>
+Pour les passionnés d’art, de dessin et d’esthétique corporelle.
                                 </p>
                                 <div class="flex items-center justify-between">
-                                    <span class="text-[#e8e0d4]/40 text-xs">96 pages</span>
+                                    <span class="text-[#f0e6ee]/40 text-xs">96 pages</span>
                                     <button class="btn-outline px-5 py-2 rounded-full text-xs tracking-wider uppercase">Détails</button>
                                 </div>
                             </div>
@@ -515,20 +613,21 @@
 
                 <!-- Artbook 3 -->
                 <div class="group reveal-up">
-                    <div class="gold-border rounded-xl p-[2px] card-hover">
-                        <div class="rounded-xl overflow-hidden bg-[#0f0f18]">
+                    <div class="pink-border rounded-xl p-[2px] card-hover">
+                        <div class="rounded-xl overflow-hidden bg-[#0f0810]">
                             <div class="relative overflow-hidden">
-                                <img src="https://image.qwenlm.ai/public_source/87ab1134-fe7d-47c8-b326-6d3527acabfe/1a03dffad-8171-4a53-9049-2340cb1a1532.png" alt="Artbook" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-700">
-                                <div class="absolute top-4 right-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full">UNIVERS DP</div>
+                                <!-- Image de démonstration -->
+                                <img src="assets/gallery/artbooks2024.png" alt="Artbook Marche Mystique" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-700">
+                                <div class="absolute top-4 right-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full">UNIVERS dp</div>
                             </div>
                             <div class="p-6">
-                                <span class="text-[#c9a84c] text-xs tracking-wider uppercase">Univers DP • 2024</span>
-                                <h3 class="font-heading text-xl font-semibold mt-2 mb-3">Marche Mystique</h3>
-                                <p class="text-[#e8e0d4]/50 text-sm leading-relaxed mb-4">
-                                    L'univers DP prend forme dans ce recueil fantastique. Des pieds célestes foulant des mondes imaginaires, entre mythologie et sensualité.
+                                <span class="text-[#e91e8c] text-xs tracking-wider uppercase">Univers dp • 2026</span>
+                                <h3 class="font-heading text-xl font-semibold mt-2 mb-3">Feet of SIBYL</h3>
+                                <p class="text-[#f0e6ee]/50 text-sm leading-relaxed mb-4">
+                                    L'univers dp prend forme dans ce recueil fantastique. Des pieds célestes foulant des mondes imaginaires, entre mythologie et sensualité.
                                 </p>
                                 <div class="flex items-center justify-between">
-                                    <span class="text-[#e8e0d4]/40 text-xs">160 pages</span>
+                                    <span class="text-[#f0e6ee]/40 text-xs">160 pages</span>
                                     <button class="btn-outline px-5 py-2 rounded-full text-xs tracking-wider uppercase">Détails</button>
                                 </div>
                             </div>
@@ -538,96 +637,96 @@
             </div>
 
             <!-- More artbooks list -->
-            <div class="mt-16 reveal-up">
+           <!-- <div class="mt-16 reveal-up">
                 <h3 class="font-heading text-2xl font-semibold mb-8 text-center">
-                    Toute ma <span class="gold-gradient">collection</span>
+                    Toute ma <span class="pink-gradient">collection</span>
                 </h3>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <div class="bg-[#0f0f18] border border-[#c9a84c]/10 rounded-xl p-5 card-hover cursor-pointer group">
+                    <div class="bg-[#0f0810] border border-[#e91e8c]/10 rounded-xl p-5 card-hover cursor-pointer group">
                         <div class="flex items-center gap-4">
-                            <div class="w-12 h-16 bg-gradient-to-br from-purple-800 to-purple-900 rounded flex-shrink-0 flex items-center justify-center">
-                                <span class="text-[#c9a84c] text-xs font-bold">01</span>
+                            <div class="w-12 h-16 bg-gradient-to-br from-purple-900 to-purple-800 rounded flex-shrink-0 flex items-center justify-center">
+                                <span class="text-[#e91e8c] text-xs font-bold">01</span>
                             </div>
                             <div>
-                                <h4 class="font-heading text-sm font-semibold group-hover:text-[#c9a84c] transition-colors">Soleil Podal</h4>
-                                <span class="text-[#e8e0d4]/40 text-xs">48 pages</span>
+                                <h4 class="font-heading text-sm font-semibold group-hover:text-[#e91e8c] transition-colors">Soleil Podal</h4>
+                                <span class="text-[#f0e6ee]/40 text-xs">48 pages</span>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-[#0f0f18] border border-[#c9a84c]/10 rounded-xl p-5 card-hover cursor-pointer group">
+                    <div class="bg-[#0f0810] border border-[#e91e8c]/10 rounded-xl p-5 card-hover cursor-pointer group">
                         <div class="flex items-center gap-4">
-                            <div class="w-12 h-16 bg-gradient-to-br from-purple-800 to-purple-900 rounded flex-shrink-0 flex items-center justify-center">
-                                <span class="text-[#c9a84c] text-xs font-bold">02</span>
+                            <div class="w-12 h-16 bg-gradient-to-br from-purple-900 to-purple-800 rounded flex-shrink-0 flex items-center justify-center">
+                                <span class="text-[#e91e8c] text-xs font-bold">02</span>
                             </div>
                             <div>
-                                <h4 class="font-heading text-sm font-semibold group-hover:text-[#c9a84c] transition-colors">Cambrure Divine</h4>
-                                <span class="text-[#e8e0d4]/40 text-xs">64 pages</span>
+                                <h4 class="font-heading text-sm font-semibold group-hover:text-[#e91e8c] transition-colors">Cambrure Divine</h4>
+                                <span class="text-[#f0e6ee]/40 text-xs">64 pages</span>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-[#0f0f18] border border-[#c9a84c]/10 rounded-xl p-5 card-hover cursor-pointer group">
+                    <div class="bg-[#0f0810] border border-[#e91e8c]/10 rounded-xl p-5 card-hover cursor-pointer group">
                         <div class="flex items-center gap-4">
-                            <div class="w-12 h-16 bg-gradient-to-br from-purple-800 to-purple-900 rounded flex-shrink-0 flex items-center justify-center">
-                                <span class="text-[#c9a84c] text-xs font-bold">03</span>
+                            <div class="w-12 h-16 bg-gradient-to-br from-purple-900 to-purple-800 rounded flex-shrink-0 flex items-center justify-center">
+                                <span class="text-[#e91e8c] text-xs font-bold">03</span>
                             </div>
                             <div>
-                                <h4 class="font-heading text-sm font-semibold group-hover:text-[#c9a84c] transition-colors">Doigts de Satin</h4>
-                                <span class="text-[#e8e0d4]/40 text-xs">72 pages</span>
+                                <h4 class="font-heading text-sm font-semibold group-hover:text-[#e91e8c] transition-colors">Doigts de Satin</h4>
+                                <span class="text-[#f0e6ee]/40 text-xs">72 pages</span>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-[#0f0f18] border border-[#c9a84c]/10 rounded-xl p-5 card-hover cursor-pointer group">
+                    <div class="bg-[#0f0810] border border-[#e91e8c]/10 rounded-xl p-5 card-hover cursor-pointer group">
                         <div class="flex items-center gap-4">
-                            <div class="w-12 h-16 bg-gradient-to-br from-purple-800 to-purple-900 rounded flex-shrink-0 flex items-center justify-center">
-                                <span class="text-[#c9a84c] text-xs font-bold">04</span>
+                            <div class="w-12 h-16 bg-gradient-to-br from-purple-900 to-purple-800 rounded flex-shrink-0 flex items-center justify-center">
+                                <span class="text-[#e91e8c] text-xs font-bold">04</span>
                             </div>
                             <div>
-                                <h4 class="font-heading text-sm font-semibold group-hover:text-[#c9a84c] transition-colors">Voûte Éternelle</h4>
-                                <span class="text-[#e8e0d4]/40 text-xs">88 pages</span>
+                                <h4 class="font-heading text-sm font-semibold group-hover:text-[#e91e8c] transition-colors">Voûte Éternelle</h4>
+                                <span class="text-[#f0e6ee]/40 text-xs">88 pages</span>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-[#0f0f18] border border-[#c9a84c]/10 rounded-xl p-5 card-hover cursor-pointer group">
+                    <div class="bg-[#0f0810] border border-[#e91e8c]/10 rounded-xl p-5 card-hover cursor-pointer group">
                         <div class="flex items-center gap-4">
-                            <div class="w-12 h-16 bg-gradient-to-br from-purple-800 to-purple-900 rounded flex-shrink-0 flex items-center justify-center">
-                                <span class="text-[#c9a84c] text-xs font-bold">05</span>
+                            <div class="w-12 h-16 bg-gradient-to-br from-purple-900 to-purple-800 rounded flex-shrink-0 flex items-center justify-center">
+                                <span class="text-[#e91e8c] text-xs font-bold">05</span>
                             </div>
                             <div>
-                                <h4 class="font-heading text-sm font-semibold group-hover:text-[#c9a84c] transition-colors">Pas de Danse</h4>
-                                <span class="text-[#e8e0d4]/40 text-xs">56 pages</span>
+                                <h4 class="font-heading text-sm font-semibold group-hover:text-[#e91e8c] transition-colors">Pas de Danse</h4>
+                                <span class="text-[#f0e6ee]/40 text-xs">56 pages</span>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-[#0f0f18] border border-[#c9a84c]/10 rounded-xl p-5 card-hover cursor-pointer group">
+                    <div class="bg-[#0f0810] border border-[#e91e8c]/10 rounded-xl p-5 card-hover cursor-pointer group">
                         <div class="flex items-center gap-4">
-                            <div class="w-12 h-16 bg-gradient-to-br from-purple-800 to-purple-900 rounded flex-shrink-0 flex items-center justify-center">
-                                <span class="text-[#c9a84c] text-xs font-bold">06</span>
+                            <div class="w-12 h-16 bg-gradient-to-br from-purple-900 to-purple-800 rounded flex-shrink-0 flex items-center justify-center">
+                                <span class="text-[#e91e8c] text-xs font-bold">06</span>
                             </div>
                             <div>
-                                <h4 class="font-heading text-sm font-semibold group-hover:text-[#c9a84c] transition-colors">Talon Royal</h4>
-                                <span class="text-[#e8e0d4]/40 text-xs">44 pages</span>
+                                <h4 class="font-heading text-sm font-semibold group-hover:text-[#e91e8c] transition-colors">Talon Royal</h4>
+                                <span class="text-[#f0e6ee]/40 text-xs">44 pages</span>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-[#0f0f18] border border-[#c9a84c]/10 rounded-xl p-5 card-hover cursor-pointer group">
+                    <div class="bg-[#0f0810] border border-[#e91e8c]/10 rounded-xl p-5 card-hover cursor-pointer group">
                         <div class="flex items-center gap-4">
-                            <div class="w-12 h-16 bg-gradient-to-br from-purple-800 to-purple-900 rounded flex-shrink-0 flex items-center justify-center">
-                                <span class="text-[#c9a84c] text-xs font-bold">07</span>
+                            <div class="w-12 h-16 bg-gradient-to-br from-purple-900 to-purple-800 rounded flex-shrink-0 flex items-center justify-center">
+                                <span class="text-[#e91e8c] text-xs font-bold">07</span>
                             </div>
                             <div>
-                                <h4 class="font-heading text-sm font-semibold group-hover:text-[#c9a84c] transition-colors">Orteils Dorés</h4>
-                                <span class="text-[#e8e0d4]/40 text-xs">80 pages</span>
+                                <h4 class="font-heading text-sm font-semibold group-hover:text-[#e91e8c] transition-colors">Orteils Dorés</h4>
+                                <span class="text-[#f0e6ee]/40 text-xs">80 pages</span>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-[#0f0f18] border border-[#c9a84c]/10 rounded-xl p-5 card-hover cursor-pointer group">
+                    <div class="bg-[#0f0810] border border-[#e91e8c]/10 rounded-xl p-5 card-hover cursor-pointer group">
                         <div class="flex items-center gap-4">
-                            <div class="w-12 h-16 bg-gradient-to-br from-purple-800 to-purple-900 rounded flex-shrink-0 flex items-center justify-center">
-                                <span class="text-[#c9a84c] text-xs font-bold">08</span>
+                            <div class="w-12 h-16 bg-gradient-to-br from-purple-900 to-purple-800 rounded flex-shrink-0 flex items-center justify-center">
+                                <span class="text-[#e91e8c] text-xs font-bold">08</span>
                             </div>
                             <div>
-                                <h4 class="font-heading text-sm font-semibold group-hover:text-[#c9a84c] transition-colors">DP Chronicles</h4>
-                                <span class="text-[#e8e0d4]/40 text-xs">120 pages</span>
+                                <h4 class="font-heading text-sm font-semibold group-hover:text-[#e91e8c] transition-colors">dp Chronicles</h4>
+                                <span class="text-[#f0e6ee]/40 text-xs">120 pages</span>
                             </div>
                         </div>
                     </div>
@@ -636,111 +735,112 @@
         </div>
     </section>
 
-    <div class="section-divider max-w-7xl mx-auto"></div>
-
-    <!-- Univers DP Section -->
+    <div class="section-divider max-w-7xl mx-auto"></div>  -->
+   
+    <!-- Univers dp Section -->
     <section id="univers" class="py-24 md:py-32 px-6 relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-b from-purple-900/5 via-[#0a0a0f] to-purple-900/5"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-purple-900/8 via-[#0a0508] to-purple-900/8"></div>
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="text-center mb-16 reveal-up">
-                <span class="text-[#c9a84c] text-xs tracking-[0.3em] uppercase mb-4 block">Univers Exclusif</span>
+                <span class="text-[#e91e8c] text-xs tracking-[0.3em] uppercase mb-4 block">Univers Exclusif</span>
                 <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                    L'Univers <span class="gold-gradient">DP</span>
+                    L'Univers <span class="pink-gradient">dp</span>
                 </h2>
-                <p class="text-[#e8e0d4]/50 max-w-2xl mx-auto text-lg">
-                    Un monde imaginaire où le fétichisme des pieds devient narration, où chaque création raconte une histoire dans mon univers personnel DP.
+                <p class="text-[#f0e6ee]/50 max-w-2xl mx-auto text-lg">
+                    Un monde imaginaire où le fétichisme des pieds devient narration, où chaque création raconte une histoire dans mon univers personnel dp.
                 </p>
             </div>
 
             <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
                 <div class="reveal-left">
-                    <div class="gold-border rounded-2xl p-[2px] pulse-glow">
+                    <div class="pink-border rounded-2xl p-[2px] pulse-glow">
                         <div class="rounded-2xl overflow-hidden">
-                            <img src="https://image.qwenlm.ai/public_source/87ab1134-fe7d-47c8-b326-6d3527acabfe/1a03dffad-8171-4a53-9049-2340cb1a1532.png" alt="Univers DP" class="w-full h-[400px] object-cover">
+                            <!-- Image de démonstration -->
+                            <img src="assets/gallery/dp-darkpedis.png" alt="Univers dp plante des pieds" class="w-full h-[400px] object-cover">
                         </div>
                     </div>
                 </div>
                 <div class="reveal-right space-y-6">
                     <h3 class="font-heading text-3xl font-bold">
-                        <span class="gold-gradient">DP</span> — Dark Pedis
+                        <span class="pink-gradient">dp</span> — dark pedis
                     </h3>
-                    <p class="text-[#e8e0d4]/60 leading-relaxed">
-                        L'univers DP est mon espace de création libre, un monde où l'art du fétichisme podal se mêle à la fantasy et au récit visuel. Chaque pièce de cet univers explore des thèmes comme la domination, la contemplation et l'adoration à travers des compositions soigneusement orchestrées.
+                    <p class="text-[#f0e6ee]/60 leading-relaxed">
+                        L'univers dp est mon espace de création libre, un monde où l'art du fétichisme podal se mêle à la fantasy et au récit visuel. Chaque pièce de cet univers explore des thèmes comme la domination, la contemplation et l'adoration à travers des compositions soigneusement orchestrées.
                     </p>
                     <div class="space-y-4">
                         <div class="flex items-start gap-4">
-                            <div class="w-8 h-8 rounded-full bg-[#c9a84c]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <span class="text-[#c9a84c] text-sm">✦</span>
+                            <div class="w-8 h-8 rounded-full bg-[#e91e8c]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <span class="text-[#e91e8c] text-sm">✦</span>
                             </div>
                             <div>
-                                <h4 class="font-heading font-semibold text-[#e8e0d4] mb-1">Narrative Art</h4>
-                                <p class="text-[#e8e0d4]/40 text-sm">Chaque œuvre DP raconte une histoire, un moment suspendu entre désir et esthétique.</p>
+                                <h4 class="font-heading font-semibold text-[#f0e6ee] mb-1">Narrative Art</h4>
+                                <p class="text-[#f0e6ee]/40 text-sm">Chaque œuvre dp raconte une histoire, un moment suspendu entre désir et esthétique.</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
-                            <div class="w-8 h-8 rounded-full bg-[#c9a84c]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <span class="text-[#c9a84c] text-sm"></span>
+                            <div class="w-8 h-8 rounded-full bg-[#e91e8c]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <span class="text-[#e91e8c] text-sm"></span>
                             </div>
                             <div>
-                                <h4 class="font-heading font-semibold text-[#e8e0d4] mb-1">World Building</h4>
-                                <p class="text-[#e8e0d4]/40 text-sm">Un univers cohérent avec ses propres codes, son esthétique et ses personnages récurrents.</p>
+                                <h4 class="font-heading font-semibold text-[#f0e6ee] mb-1">World Building</h4>
+                                <p class="text-[#f0e6ee]/40 text-sm">Un univers cohérent avec ses propres codes, son esthétique et ses personnages récurrents.</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
-                            <div class="w-8 h-8 rounded-full bg-[#c9a84c]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <span class="text-[#c9a84c] text-sm"></span>
+                            <div class="w-8 h-8 rounded-full bg-[#e91e8c]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <span class="text-[#e91e8c] text-sm"></span>
                             </div>
                             <div>
-                                <h4 class="font-heading font-semibold text-[#e8e0d4] mb-1">Artbooks Exclusifs</h4>
-                                <p class="text-[#e8e0d4]/40 text-sm">Des collections imprimées et numériques disponibles uniquement sur plantédespieds.com.</p>
+                                <h4 class="font-heading font-semibold text-[#f0e6ee] mb-1">Artbooks Exclusifs</h4>
+                                <p class="text-[#f0e6ee]/40 text-sm">Des collections imprimées et numériques disponibles uniquement sur FeetOfSibyl.com.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- DP Timeline -->
+            <!-- dp Timeline -->
             <div class="reveal-up">
                 <h3 class="font-heading text-2xl font-semibold mb-10 text-center">
-                    Chronologie <span class="gold-gradient">DP</span>
+                    Chronologie <span class="pink-gradient">dp</span>
                 </h3>
                 <div class="relative">
-                    <div class="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[#c9a84c]/30 to-transparent hidden md:block"></div>
+                    <div class="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[#e91e8c]/25 to-transparent hidden md:block"></div>
                     <div class="space-y-8">
                         <div class="flex flex-col md:flex-row items-center gap-6 md:gap-12">
                             <div class="md:w-1/2 md:text-right">
-                                <span class="text-[#c9a84c] text-sm font-bold">2022</span>
-                                <h4 class="font-heading text-lg font-semibold mt-1">Naissance de l'Univers DP</h4>
-                                <p class="text-[#e8e0d4]/40 text-sm mt-2">Premières illustrations explorant le thème du fétichisme podal dans un cadre narratif.</p>
+                                <span class="text-[#e91e8c] text-sm font-bold">2022</span>
+                                <h4 class="font-heading text-lg font-semibold mt-1">Naissance de l'univers dp</h4>
+                                <p class="text-[#f0e6ee]/40 text-sm mt-2">Premières illustrations explorant le thème du fétichisme podal dans un cadre narratif.</p>
                             </div>
-                            <div class="w-4 h-4 rounded-full bg-[#c9a84c] ring-4 ring-[#c9a84c]/20 flex-shrink-0 z-10"></div>
+                            <div class="w-4 h-4 rounded-full bg-[#e91e8c] ring-4 ring-[#e91e8c]/20 flex-shrink-0 z-10"></div>
                             <div class="md:w-1/2"></div>
                         </div>
                         <div class="flex flex-col md:flex-row items-center gap-6 md:gap-12">
                             <div class="md:w-1/2"></div>
-                            <div class="w-4 h-4 rounded-full bg-[#c9a84c] ring-4 ring-[#c9a84c]/20 flex-shrink-0 z-10"></div>
+                            <div class="w-4 h-4 rounded-full bg-[#e91e8c] ring-4 ring-[#e91e8c]/20 flex-shrink-0 z-10"></div>
                             <div class="md:w-1/2">
-                                <span class="text-[#c9a84c] text-sm font-bold">2023</span>
-                                <h4 class="font-heading text-lg font-semibold mt-1">Premier Artbook DP</h4>
-                                <p class="text-[#e8e0d4]/40 text-sm mt-2">Publication de "Velours Pourpre", premier recueil de l'univers avec 96 pages d'illustrations originales.</p>
+                                <span class="text-[#e91e8c] text-sm font-bold">2023</span>
+                                <h4 class="font-heading text-lg font-semibold mt-1">Premier Artbook dp</h4>
+                                <p class="text-[#f0e6ee]/40 text-sm mt-2">Publication de "Velours Pourpre", premier recueil de l'univers avec 96 pages d'illustrations originales.</p>
                             </div>
                         </div>
                         <div class="flex flex-col md:flex-row items-center gap-6 md:gap-12">
                             <div class="md:w-1/2 md:text-right">
-                                <span class="text-[#c9a84c] text-sm font-bold">2024</span>
-                                <h4 class="font-heading text-lg font-semibold mt-1">Expansion de l'Univers</h4>
-                                <p class="text-[#e8e0d4]/40 text-sm mt-2">Création de "Marche Mystique" et développement de la galerie en ligne plantédespieds.com.</p>
+                                <span class="text-[#e91e8c] text-sm font-bold">2024</span>
+                                <h4 class="font-heading text-lg font-semibold mt-1">Expansion de l'univers</h4>
+                                <p class="text-[#f0e6ee]/40 text-sm mt-2">Création de "Marche Mystique" et développement de la galerie en ligne FeetOfSibyl.com.</p>
                             </div>
-                            <div class="w-4 h-4 rounded-full bg-[#c9a84c] ring-4 ring-[#c9a84c]/20 flex-shrink-0 z-10"></div>
+                            <div class="w-4 h-4 rounded-full bg-[#e91e8c] ring-4 ring-[#e91e8c]/20 flex-shrink-0 z-10"></div>
                             <div class="md:w-1/2"></div>
                         </div>
                         <div class="flex flex-col md:flex-row items-center gap-6 md:gap-12">
                             <div class="md:w-1/2"></div>
-                            <div class="w-4 h-4 rounded-full bg-[#c9a84c] ring-4 ring-[#c9a84c]/20 flex-shrink-0 z-10 animate-pulse"></div>
+                            <div class="w-4 h-4 rounded-full bg-[#e91e8c] ring-4 ring-[#e91e8c]/20 flex-shrink-0 z-10 animate-pulse"></div>
                             <div class="md:w-1/2">
-                                <span class="text-[#c9a84c] text-sm font-bold">2025</span>
-                                <h4 class="font-heading text-lg font-semibold mt-1">Nouveau Chapitre</h4>
-                                <p class="text-[#e8e0d4]/40 text-sm mt-2">Lancement officiel du site et ouverture des commandes d'artbooks exclusifs de l'univers DP.</p>
+                                <span class="text-[#e91e8c] text-sm font-bold">2025</span>
+                                <h4 class="font-heading text-lg font-semibold mt-1">Nouveau chapitre</h4>
+                                <p class="text-[#f0e6ee]/40 text-sm mt-2">Lancement officiel du site et ouverture des commandes d'artbooks exclusifs de l'univers dp.</p>
                             </div>
                         </div>
                     </div>
@@ -754,22 +854,21 @@
     <!-- Newsletter / CTA -->
     <section class="py-24 md:py-32 px-6">
         <div class="max-w-4xl mx-auto text-center reveal-up">
-            <div class="gold-border rounded-3xl p-[2px]">
-                <div class="rounded-3xl bg-gradient-to-b from-[#0f0f18] to-[#1a1a2e] p-10 md:p-16">
-                    <span class="text-[#c9a84c] text-xs tracking-[0.3em] uppercase mb-4 block">Newsletter</span>
+            <div class="pink-border rounded-3xl p-[2px]">
+                <div class="rounded-3xl bg-gradient-to-b from-[#0f0810] to-[#1a0f18] p-10 md:p-16">
+                    <span class="text-[#e91e8c] text-xs tracking-[0.3em] uppercase mb-4 block">Newsletter</span>
                     <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                        Restez dans la <span class="gold-gradient">boucle</span>
+                        Reste dans la <span class="pink-gradient">boucle</span>
                     </h2>
-                    <p class="text-[#e8e0d4]/50 max-w-xl mx-auto mb-10">
-                        Recevez en avant-première mes nouvelles créations, artbooks et contenus exclusifs de l'univers DP directement dans votre boîte mail.
+                    <p class="text-[#f0e6ee]/50 max-w-xl mx-auto mb-10">
+                        Reçois en avant-première mes nouvelles créations, artbooks et contenus exclusifs de l'univers dp directement dans ta boîte mail.
                     </p>
-                    <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto" onsubmit="handleNewsletter(event)">
-                        <input type="email" placeholder="votre@email.com" required class="flex-1 bg-[#0a0a0f] border border-[#c9a84c]/20 rounded-full px-6 py-4 text-[#e8e0d4] placeholder-[#e8e0d4]/30 focus:outline-none focus:border-[#c9a84c]/60 transition-colors">
-                        <button type="submit" class="btn-primary px-8 py-4 rounded-full text-sm tracking-wider uppercase whitespace-nowrap">
-                            S'inscrire
-                        </button>
+                    <form action="https://formspree.io/f/mykowjbk" method="POST" class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                            <input type="hidden" name="_subject" value="Nouvelle inscription newsletter - Feet Of SIBYL">
+                            <input type="email" name="email" placeholder="ton@email.com" required ...>
+                            <button type="submit" class="btn-primary ...">S'inscrire</button>
                     </form>
-                    <p class="text-[#e8e0d4]/30 text-xs mt-4">Pas de spam. Désinscription à tout moment.</p>
+                    <p class="text-[#f0e6ee]/30 text-xs mt-4">Pas de spam. Désinscription à tout moment.</p>
                 </div>
             </div>
         </div>
@@ -779,12 +878,12 @@
     <section id="contact" class="py-24 md:py-32 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16 reveal-up">
-                <span class="text-[#c9a84c] text-xs tracking-[0.3em] uppercase mb-4 block">Contact</span>
+                <span class="text-[#e91e8c] text-xs tracking-[0.3em] uppercase mb-4 block">Contact</span>
                 <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                    Me <span class="gold-gradient">Contacter</span>
+                    Me <span class="pink-gradient">Contacter</span>
                 </h2>
-                <p class="text-[#e8e0d4]/50 max-w-2xl mx-auto text-lg">
-                    Pour des commandes personnalisées, collaborations ou toute question sur l'univers DP.
+                <p class="text-[#f0e6ee]/50 max-w-2xl mx-auto text-lg">
+                    Pour des commandes personnalisées, collaborations ou toute question sur l'univers dp.
                 </p>
             </div>
 
@@ -794,21 +893,21 @@
                         <h3 class="font-heading text-xl font-semibold mb-6">Informations</h3>
                         <div class="space-y-4">
                             <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 rounded-xl bg-[#c9a84c]/10 flex items-center justify-center">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                <div class="w-12 h-12 rounded-xl bg-[#e91e8c]/10 flex items-center justify-center">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e91e8c" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                                 </div>
                                 <div>
-                                    <p class="text-[#e8e0d4]/40 text-xs uppercase tracking-wider">Email</p>
-                                    <p class="text-[#e8e0d4]">contact@plantedespieds.com</p>
+                                    <p class="text-[#f0e6ee]/40 text-xs uppercase tracking-wider">Email</p>
+                                    <p class="text-[#f0e6ee]">contact@feetofsibyl.com</p>
                                 </div>
                             </div>
                             <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 rounded-xl bg-[#c9a84c]/10 flex items-center justify-center">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                <div class="w-12 h-12 rounded-xl bg-[#e91e8c]/10 flex items-center justify-center">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e91e8c" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                                 </div>
                                 <div>
-                                    <p class="text-[#e8e0d4]/40 text-xs uppercase tracking-wider">Localisation</p>
-                                    <p class="text-[#e8e0d4]">France</p>
+                                    <p class="text-[#f0e6ee]/40 text-xs uppercase tracking-wider">Localisation</p>
+                                    <p class="text-[#f0e6ee]">France</p>
                                 </div>
                             </div>
                         </div>
@@ -816,32 +915,32 @@
                     <div>
                         <h3 class="font-heading text-xl font-semibold mb-4">Réseaux Sociaux</h3>
                         <div class="flex gap-4">
-                            <a href="#" class="w-12 h-12 rounded-xl border border-[#c9a84c]/20 flex items-center justify-center hover:bg-[#c9a84c]/10 hover:border-[#c9a84c]/40 transition-all">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+                            <a href="#" class="w-12 h-12 rounded-xl border border-[#e91e8c]/20 flex items-center justify-center hover:bg-[#e91e8c]/10 hover:border-[#e91e8c]/40 transition-all">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e91e8c" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
                             </a>
-                            <a href="#" class="w-12 h-12 rounded-xl border border-[#c9a84c]/20 flex items-center justify-center hover:bg-[#c9a84c]/10 hover:border-[#c9a84c]/40 transition-all">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                            <a href="#" class="w-12 h-12 rounded-xl border border-[#e91e8c]/20 flex items-center justify-center hover:bg-[#e91e8c]/10 hover:border-[#e91e8c]/40 transition-all">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e91e8c" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
                             </a>
-                            <a href="#" class="w-12 h-12 rounded-xl border border-[#c9a84c]/20 flex items-center justify-center hover:bg-[#c9a84c]/10 hover:border-[#c9a84c]/40 transition-all">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            <a href="#" class="w-12 h-12 rounded-xl border border-[#e91e8c]/20 flex items-center justify-center hover:bg-[#e91e8c]/10 hover:border-[#e91e8c]/40 transition-all">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e91e8c" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="reveal-right">
-                    <form class="space-y-5" onsubmit="handleContact(event)">
+                    <form action="https://formspree.io/f/xpqbdrdj" method="POST" class="space-y-5">
                         <div class="grid sm:grid-cols-2 gap-5">
-                            <input type="text" placeholder="Nom" required class="bg-[#0f0f18] border border-[#c9a84c]/20 rounded-xl px-5 py-4 text-[#e8e0d4] placeholder-[#e8e0d4]/30 focus:outline-none focus:border-[#c9a84c]/60 transition-colors w-full">
-                            <input type="email" placeholder="Email" required class="bg-[#0f0f18] border border-[#c9a84c]/20 rounded-xl px-5 py-4 text-[#e8e0d4] placeholder-[#e8e0d4]/30 focus:outline-none focus:border-[#c9a84c]/60 transition-colors w-full">
+                            <input type="text" name="nom" placeholder="Nom" required class="bg-[#0f0810] border border-[#e91e8c]/20 rounded-xl px-5 py-4 text-[#f0e6ee] placeholder-[#f0e6ee]/30 focus:outline-none focus:border-[#e91e8c]/60 transition-colors w-full">
+                            <input type="email" name="email" placeholder="Email" required class="bg-[#0f0810] border border-[#e91e8c]/20 rounded-xl px-5 py-4 text-[#f0e6ee] placeholder-[#f0e6ee]/30 focus:outline-none focus:border-[#e91e8c]/60 transition-colors w-full">
                         </div>
-                        <select class="bg-[#0f0f18] border border-[#c9a84c]/20 rounded-xl px-5 py-4 text-[#e8e0d4]/60 focus:outline-none focus:border-[#c9a84c]/60 transition-colors w-full appearance-none cursor-pointer">
+                        <select name="sujet" class="bg-[#0f0810] border border-[#e91e8c]/20 rounded-xl px-5 py-4 text-[#f0e6ee]/60 focus:outline-none focus:border-[#e91e8c]/60 transition-colors w-full appearance-none cursor-pointer">
                             <option value="">Sujet</option>
                             <option value="commande">Commande personnalisée</option>
                             <option value="artbook">Artbook / Collection</option>
                             <option value="collab">Collaboration</option>
                             <option value="autre">Autre</option>
                         </select>
-                        <textarea placeholder="Votre message..." rows="5" required class="bg-[#0f0f18] border border-[#c9a84c]/20 rounded-xl px-5 py-4 text-[#e8e0d4] placeholder-[#e8e0d4]/30 focus:outline-none focus:border-[#c9a84c]/60 transition-colors w-full resize-none"></textarea>
+                        <textarea name="message" placeholder="Ton message..." rows="5" required class="bg-[#0f0810] border border-[#e91e8c]/20 rounded-xl px-5 py-4 text-[#f0e6ee] placeholder-[#f0e6ee]/30 focus:outline-none focus:border-[#e91e8c]/60 transition-colors w-full resize-none"></textarea>
                         <button type="submit" class="btn-primary w-full py-4 rounded-xl text-sm tracking-wider uppercase">
                             Envoyer le Message
                         </button>
@@ -852,53 +951,53 @@
     </section>
 
     <!-- Footer -->
-    <footer class="border-t border-[#c9a84c]/10 py-16 px-6">
+    <footer class="border-t border-[#e91e8c]/10 py-16 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
                 <div>
                     <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 rounded-full gold-border flex items-center justify-center">
-                            <div class="w-8 h-8 rounded-full bg-[#0a0a0f] flex items-center justify-center">
-                                <span class="text-[#c9a84c] text-sm font-bold">PdP</span>
+                        <div class="w-10 h-10 rounded-full pink-border flex items-center justify-center">
+                            <div class="w-8 h-8 rounded-full bg-[#0a0508] flex items-center justify-center">
+                                <span class="text-[#e91e8c] text-sm font-bold">dp</span>
                             </div>
                         </div>
-                        <span class="font-heading font-semibold text-lg gold-gradient">Planté des Pieds</span>
+                        <span class="font-heading font-semibold text-lg pink-gradient">Feet Of SIBYL</span>
                     </div>
-                    <p class="text-[#e8e0d4]/40 text-sm leading-relaxed">
-                        Art fétiche, artbooks exclusifs et univers DP. Une exploration artistique du fétichisme podal.
+                    <p class="text-[#f0e6ee]/40 text-sm leading-relaxed">
+                        Art fétiche, artbooks exclusifs et univers dp. Une exploration artistique du fétichisme podal.
                     </p>
                 </div>
                 <div>
-                    <h4 class="font-heading font-semibold mb-4 text-[#e8e0d4]/80">Navigation</h4>
+                    <h4 class="font-heading font-semibold mb-4 text-[#f0e6ee]/80">Navigation</h4>
                     <ul class="space-y-3">
-                        <li><a href="#accueil" class="text-[#e8e0d4]/40 text-sm hover:text-[#c9a84c] transition-colors">Accueil</a></li>
-                        <li><a href="#galerie" class="text-[#e8e0d4]/40 text-sm hover:text-[#c9a84c] transition-colors">Galerie</a></li>
-                        <li><a href="#artbooks" class="text-[#e8e0d4]/40 text-sm hover:text-[#c9a84c] transition-colors">Artbooks</a></li>
-                        <li><a href="#univers" class="text-[#e8e0d4]/40 text-sm hover:text-[#c9a84c] transition-colors">Univers DP</a></li>
+                        <li><a href="#accueil" class="text-[#f0e6ee]/40 text-sm hover:text-[#e91e8c] transition-colors">Accueil</a></li>
+                        <li><a href="#galerie" class="text-[#f0e6ee]/40 text-sm hover:text-[#e91e8c] transition-colors">Galerie</a></li>
+                        <li><a href="#artbooks" class="text-[#f0e6ee]/40 text-sm hover:text-[#e91e8c] transition-colors">Artbooks</a></li>
+                        <li><a href="#univers" class="text-[#f0e6ee]/40 text-sm hover:text-[#e91e8c] transition-colors">Univers dp</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-heading font-semibold mb-4 text-[#e8e0d4]/80">Collections</h4>
+                    <h4 class="font-heading font-semibold mb-4 text-[#f0e6ee]/80">Collections</h4>
                     <ul class="space-y-3">
-                        <li><span class="text-[#e8e0d4]/40 text-sm">Luxe Figures</span></li>
-                        <li><span class="text-[#e8e0d4]/40 text-sm">Velours Pourpre</span></li>
-                        <li><span class="text-[#e8e0d4]/40 text-sm">Marche Mystique</span></li>
-                        <li><span class="text-[#e8e0d4]/40 text-sm">DP Chronicles</span></li>
+                        <li><span class="text-[#f0e6ee]/40 text-sm">Luxe Figures</span></li>
+                        <li><span class="text-[#f0e6ee]/40 text-sm">Velours Pourpre</span></li>
+                        <li><span class="text-[#f0e6ee]/40 text-sm">Marche Mystique</span></li>
+                        <li><span class="text-[#f0e6ee]/40 text-sm">dp Chronicles</span></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-heading font-semibold mb-4 text-[#e8e0d4]/80">Légal</h4>
+                    <h4 class="font-heading font-semibold mb-4 text-[#f0e6ee]/80">Légal</h4>
                     <ul class="space-y-3">
-                        <li><a href="#" class="text-[#e8e0d4]/40 text-sm hover:text-[#c9a84c] transition-colors">Mentions légales</a></li>
-                        <li><a href="#" class="text-[#e8e0d4]/40 text-sm hover:text-[#c9a84c] transition-colors">Politique de confidentialité</a></li>
-                        <li><a href="#" class="text-[#e8e0d4]/40 text-sm hover:text-[#c9a84c] transition-colors">CGV</a></li>
+                        <li><a href="#" class="text-[#f0e6ee]/40 text-sm hover:text-[#e91e8c] transition-colors">Mentions légales</a></li>
+                        <li><a href="#" class="text-[#f0e6ee]/40 text-sm hover:text-[#e91e8c] transition-colors">Politique de confidentialité</a></li>
+                        <li><a href="#" class="text-[#f0e6ee]/40 text-sm hover:text-[#e91e8c] transition-colors">CGV</a></li>
                     </ul>
                 </div>
             </div>
             <div class="section-divider mb-8"></div>
             <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-                <p class="text-[#e8e0d4]/30 text-sm">© 2025 Planté des Pieds. Tous droits réservés.</p>
-                <p class="text-[#e8e0d4]/20 text-xs">Créé avec passion pour l'art fétiche.</p>
+                <p class="text-[#f0e6ee]/30 text-sm">© 2026 FeetOfSibyl.com. Tous droits réservés.</p>
+                <p class="text-[#f0e6ee]/20 text-xs">Créé avec passion pour l'art fétiche.</p>
             </div>
         </div>
     </footer>
@@ -916,19 +1015,17 @@
 
         // Navbar scroll effect
         const navbar = document.getElementById('navbar');
-        let lastScroll = 0;
         window.addEventListener('scroll', () => {
             const currentScroll = window.pageYOffset;
             if (currentScroll > 100) {
-                navbar.style.background = 'rgba(10,10,15,0.9)';
+                navbar.style.background = 'rgba(10,5,8,0.92)';
                 navbar.style.backdropFilter = 'blur(20px)';
-                navbar.style.borderBottom = '1px solid rgba(201,168,76,0.1)';
+                navbar.style.borderBottom = '1px solid rgba(233,30,140,0.1)';
             } else {
                 navbar.style.background = 'transparent';
                 navbar.style.backdropFilter = 'none';
                 navbar.style.borderBottom = 'none';
             }
-            lastScroll = currentScroll;
         });
 
         // Scroll reveal animations
@@ -1016,7 +1113,7 @@
             const btn = form.querySelector('button');
             const originalText = btn.textContent;
             btn.textContent = '✓ Inscrit !';
-            btn.style.background = 'linear-gradient(135deg, #4ade80, #22c55e)';
+            btn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
             form.reset();
             setTimeout(() => {
                 btn.textContent = originalText;
@@ -1031,7 +1128,7 @@
             const btn = form.querySelector('button[type="submit"]');
             const originalText = btn.textContent;
             btn.textContent = '✓ Message envoyé !';
-            btn.style.background = 'linear-gradient(135deg, #4ade80, #22c55e)';
+            btn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
             form.reset();
             setTimeout(() => {
                 btn.textContent = originalText;
@@ -1056,6 +1153,28 @@
             const heroImg = document.querySelector('#accueil img');
             if (heroImg && scrolled < window.innerHeight) {
                 heroImg.style.transform = `translateY(${scrolled * 0.3}px) scale(1.1)`;
+            }
+        });
+
+        // Age gate
+        function enterSite() {
+            const ageGate = document.getElementById('age-gate');
+            ageGate.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            ageGate.style.opacity = '0';
+            ageGate.style.transform = 'scale(1.05)';
+            setTimeout(() => {
+                ageGate.style.display = 'none';
+                localStorage.setItem('pdpAgeVerified', 'true');
+                document.body.style.overflow = '';
+            }, 600);
+        }
+
+        // Check age verification on load
+        window.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('pdpAgeVerified') === 'true') {
+                document.getElementById('age-gate').style.display = 'none';
+            } else {
+                document.body.style.overflow = 'hidden';
             }
         });
     </script>
